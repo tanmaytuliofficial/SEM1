@@ -72,20 +72,10 @@ export const Navbar = ({
           </div>
         </div>
 
-        {/* Right: Target Role Badge + Avatar */}
+        {/* Right: Avatar */}
         <div className="flex items-center gap-3">
-          {/* Target Role Badge */}
-          <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-xl bg-neutral-900 border border-neutral-800 text-xs">
-            <span className="w-1.5 h-1.5 rounded-full bg-white"></span>
-            <span className="text-[11px] font-mono text-neutral-500 uppercase font-semibold">TARGET</span>
-            <span className="text-xs font-semibold text-white">B.Tech CSE-AIML · PIET</span>
-          </div>
-
-          {/* User Avatar */}
-          <div className="flex items-center gap-2 pl-1 border-l border-neutral-800">
-            <div className="w-8 h-8 rounded-xl bg-neutral-900 text-white font-mono font-bold text-xs flex items-center justify-center border border-neutral-700">
-              TT
-            </div>
+          <div className="w-8 h-8 rounded-xl bg-neutral-900 text-white font-mono font-bold text-xs flex items-center justify-center border border-neutral-700">
+            TT
           </div>
         </div>
 
