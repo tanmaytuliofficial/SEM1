@@ -272,7 +272,7 @@ export default function App() {
               </span>
 
               <span className="text-xs font-mono px-3 py-1 rounded-full bg-neutral-900 text-neutral-400 border border-neutral-800">
-                6 Nov 2026 – 13 Jan 2027
+                11 Nov 2026 – 13 Jan 2027
               </span>
             </div>
           </div>

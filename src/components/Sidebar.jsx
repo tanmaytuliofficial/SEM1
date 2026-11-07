@@ -67,7 +67,7 @@ export const Sidebar = ({
             >
               <span className="flex items-center gap-2">
                 <CalendarDays className="w-3.5 h-3.5 text-white" />
-                <span>Jump to Start (6 Nov)...</span>
+                <span>Jump to Start (11 Nov)...</span>
               </span>
               <span className="text-[10px] font-mono bg-neutral-800 px-1.5 py-0.5 rounded text-neutral-400">
                 Today
@@ -110,7 +110,7 @@ export const Sidebar = ({
                 }`}
               >
                 <CalendarDays className="w-4 h-4" />
-                <span>All 69 Days Timeline</span>
+                <span>All 64 Days Timeline</span>
               </button>
             </nav>
           </div>

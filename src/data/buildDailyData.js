@@ -1,390 +1,555 @@
-// Generator script for 69 days (6 Nov 2026 – 13 Jan 2027) with exactly 2 slots per day
+// Generator script for 64 days (11 Nov 2026 – 13 Jan 2027) with exactly 2 slots per day
+// Redesigned with start date 11 November 2026, consolidating foundation topics with higher topic density.
 import fs from 'fs';
 import path from 'path';
 
 const daysData = [
-  // WEEK 1: 6–12 Nov (Foundation Phase)
-  {
-    date: "2026-11-06",
-    slot1: {
-      subject: "Mathematics-I", unit: 1, duration: "90 mins", studyType: "Learning",
-      mainTopic: "Rank of Matrices",
-      subtopics: ["Elementary row operations", "Echelon form", "Normal form", "Finding rank of 3x3 and 3x4 matrices"],
-      learningObjective: "Understand how to calculate the rank of a matrix using echelon and normal forms."
-    },
-    slot2: {
-      subject: "Engineering Chemistry", unit: 1, duration: "90 mins", studyType: "Learning",
-      mainTopic: "Water Hardness",
-      subtopics: ["Definition of hardness", "Temporary and permanent hardness", "Units of hardness & conversions", "Introduction to EDTA method"],
-      learningObjective: "Understand water hardness principles and prepare for EDTA-based numerical problems."
-    }
-  },
-  {
-    date: "2026-11-07",
-    slot1: {
-      subject: "Problem Solving Using C", unit: 2, duration: "90 mins", studyType: "Learning",
-      mainTopic: "Data Types & Operators",
-      subtopics: ["Fundamental data types", "Storage classes (auto, static, extern, register)", "Arithmetic & bitwise operators", "Operator precedence and associativity"],
-      learningObjective: "Master token syntax, operator hierarchy, and storage class lifetime rules in C."
-    },
-    slot2: {
-      subject: "Basics of Electronics Engineering", unit: 1, duration: "90 mins", studyType: "Learning",
-      mainTopic: "Semiconductor Fundamentals & Rectifiers",
-      subtopics: ["Intrinsics & extrinsics (p-type, n-type)", "PN junction barrier potential", "Half-wave rectifier derivation", "Full-wave center-tapped and bridge rectifiers"],
-      learningObjective: "Derive ripple factor, efficiency and peak inverse voltage (PIV) for rectifier circuits."
-    }
-  },
-  {
-    date: "2026-11-08",
-    slot1: {
-      subject: "Mathematics-I", unit: 1, duration: "90 mins", studyType: "Practice",
-      mainTopic: "Gauss-Jordan Inverse & Linear Independence",
-      subtopics: ["Matrix inversion via row transformations", "Definition of linear dependence & independence", "Wronskian / determinant test", "Solving for unknown scalars"],
-      learningObjective: "Calculate matrix inverses by Gauss-Jordan elimination and evaluate vector linear independence."
-    },
-    slot2: {
-      subject: "Basics of Communication Skills", unit: 1, duration: "90 mins", studyType: "Learning",
-      mainTopic: "Listening Skills & Note-Making",
-      subtopics: ["Types of listening (active, critical, empathetic)", "Barriers to effective listening", "Note-making formats & abbreviations", "Paraphrasing strategies"],
-      learningObjective: "Develop professional active listening habits and structured passage note-making techniques."
-    }
-  },
-  {
-    date: "2026-11-09",
-    slot1: {
-      subject: "Mathematics-I", unit: 1, duration: "90 mins", studyType: "Practice",
-      mainTopic: "System of Linear Equations",
-      subtopics: ["Homogeneous equations AX=0 (trivial vs non-trivial)", "Non-homogeneous equations AX=B", "Consistency condition using rank [A|B]", "Gauss elimination method"],
-      learningObjective: "Solve systems of linear equations and determine conditions for unique, infinite, and no solutions."
-    },
-    slot2: {
-      subject: "Engineering Chemistry", unit: 1, duration: "90 mins", studyType: "Practice",
-      mainTopic: "Alkalinity & Lime-Soda Process",
-      subtopics: ["Phenolphthalein & Methyl orange alkalinity titration", "Scale and sludge formation in boilers", "Caustic embrittlement & priming/foaming", "Lime-Soda process stoichiometric calculations"],
-      learningObjective: "Solve stoichiometric chemical requirement numericals for cold and hot Lime-Soda softening."
-    }
-  },
-  {
-    date: "2026-11-10",
-    slot1: {
-      subject: "Problem Solving Using C", unit: 2, duration: "90 mins", studyType: "Practice",
-      mainTopic: "Decision Making & Looping",
-      subtopics: ["if-else & nested if statements", "switch-case fall-through behavior", "for, while, and do-while loops", "break and continue logic drills"],
-      learningObjective: "Implement clean loop logic for prime testing, Fibonacci generation, and Armstrong number verification."
-    },
-    slot2: {
-      subject: "Basics of Electronics Engineering", unit: 1, duration: "90 mins", studyType: "Learning",
-      mainTopic: "Zener Diode & Special Purpose Diodes",
-      subtopics: ["Zener breakdown vs Avalanche breakdown", "Zener diode V-I characteristics", "Voltage regulation circuit analysis", "LED, Photodiode, and Varactor diode basics"],
-      learningObjective: "Analyze Zener voltage regulator circuits under varying input voltage and load conditions."
-    }
-  },
+  // ==========================================
+  // PHASE 1: CORE FOUNDATION & EXPANDED UNITS (11 Nov – 30 Nov 2026)
+  // 20 Days = 40 Slots covering Units 1, 2, 3 across all 5 subjects
+  // ==========================================
   {
     date: "2026-11-11",
     slot1: {
-      subject: "Engineering Chemistry", unit: 1, duration: "90 mins", studyType: "Learning",
-      mainTopic: "Ion Exchange & Desalination",
-      subtopics: ["Demineralization (cation & anion exchangers)", "Regeneration reactions (HCl & NaOH)", "Reverse Osmosis (RO) semi-permeable membranes", "Electrodialysis setup and industrial utility"],
-      learningObjective: "Explain advanced water purification methods and sketch industrial demineralization plants."
+      subject: "Mathematics-I", unit: 1, duration: "100 mins", studyType: "Learning",
+      mainTopic: "Matrix Rank, Canonical Reduction & Linear Independence",
+      subtopics: [
+        "Elementary row and column operations",
+        "Echelon form and Normal form [Ir | 0] reductions",
+        "Rank determination of 3x3 and 3x4 matrices",
+        "Gauss-Jordan method for matrix inversion",
+        "Linear dependence and independence of vectors"
+      ],
+      learningObjective: "Master matrix rank computation, canonical reduction, and vector independence."
     },
     slot2: {
-      subject: "Basics of Electronics Engineering", unit: 3, duration: "90 mins", studyType: "Practice",
-      mainTopic: "Binary Arithmetic & Complements",
-      subtopics: ["Binary, octal, and hexadecimal conversions", "1's complement and 2's complement representation", "Signed binary numbers arithmetic", "Subtraction using 2's complement with overflow check"],
-      learningObjective: "Perform binary arithmetic and verify signed subtraction using 2's complement techniques."
+      subject: "Engineering Chemistry", unit: 1, duration: "90 mins", studyType: "Learning",
+      mainTopic: "Water Hardness & Complexometric EDTA Method",
+      subtopics: [
+        "Temporary and permanent hardness definitions",
+        "Hardness units and equivalencies (ppm, mg/L, °Fr, °Cl)",
+        "Disodium EDTA complexometric titration principle",
+        "Buffer solution (pH 10) & Eriochrome Black T indicator",
+        "Quantitative calculations of Total, Temporary, and Permanent hardness"
+      ],
+      learningObjective: "Understand water hardness concepts and solve EDTA titration numerical problems."
     }
   },
   {
     date: "2026-11-12",
     slot1: {
-      subject: "Mathematics-I", unit: 2, duration: "90 mins", studyType: "Learning",
-      mainTopic: "Eigenvalues & Eigenvectors",
-      subtopics: ["Characteristic equation |A - lambda*I| = 0", "Eigenvalues calculation for 2x2 and 3x3 matrices", "Eigenvectors determination", "Properties: sum = trace, product = det(A)"],
-      learningObjective: "Compute eigenvalues and linearly independent eigenvectors for standard square matrices."
+      subject: "Problem Solving Using C", unit: 1, duration: "90 mins", studyType: "Learning",
+      mainTopic: "C Program Anatomy, Tokens & Storage Classes",
+      subtopics: [
+        "Structure of a C program & compilation pipeline",
+        "Identifiers, keywords, and fundamental primitive data types",
+        "Storage classes (auto, static, extern, register) and lifetimes",
+        "Arithmetic, relational, logical, and bitwise operators",
+        "Operator precedence, associativity, and type casting rules"
+      ],
+      learningObjective: "Master C token syntax, variable lifetimes, and operator evaluation rules."
     },
     slot2: {
-      subject: "Problem Solving Using C", unit: 3, duration: "90 mins", studyType: "Learning",
-      mainTopic: "1D Arrays & Memory Mapping",
-      subtopics: ["Array declaration and contiguous memory storage", "Element traversal and indexing arithmetic", "Linear search and Binary search implementation", "Bubble sort algorithm dry run"],
-      learningObjective: "Understand array memory layouts and implement fundamental search and sort algorithms in C."
+      subject: "Basics of Electronics Engineering", unit: 1, duration: "90 mins", studyType: "Learning",
+      mainTopic: "Semiconductors & Power Rectifier Circuits",
+      subtopics: [
+        "Intrinsic vs extrinsic semiconductors (p-type & n-type)",
+        "PN junction barrier potential and forward/reverse bias",
+        "Half-wave rectifier derivation (ripple factor, efficiency, PIV)",
+        "Center-tapped and Bridge full-wave rectifiers",
+        "Capacitor filter operation and ripple factor reduction"
+      ],
+      learningObjective: "Derive performance parameters for half-wave and full-wave rectifier circuits."
     }
   },
-
-  // WEEK 2: 13–19 Nov (Core Development Phase)
   {
     date: "2026-11-13",
     slot1: {
-      subject: "Mathematics-I", unit: 2, duration: "90 mins", studyType: "Practice",
-      mainTopic: "Cayley-Hamilton Theorem & Diagonalization",
-      subtopics: ["Statement & verification of Cayley-Hamilton theorem", "Finding A^-1 and higher powers A^4 using C-H", "Modal matrix P and diagonal form D = P^-1*A*P", "Orthogonal transformation of symmetric matrices"],
-      learningObjective: "Apply the Cayley-Hamilton theorem to compute matrix powers and diagonalize symmetric matrices."
+      subject: "Mathematics-I", unit: 1, duration: "100 mins", studyType: "Practice",
+      mainTopic: "System of Linear Equations & Consistency Analysis",
+      subtopics: [
+        "Homogeneous linear systems AX = 0 (trivial vs non-trivial solutions)",
+        "Non-homogeneous linear systems AX = B and augmented matrix [A|B]",
+        "Rouché-Capelli consistency conditions (unique, infinite, no solution)",
+        "Gauss elimination method with back substitution",
+        "Consistency problems with unknown parameters (lambda and mu)"
+      ],
+      learningObjective: "Determine system consistency and solve linear equations using Gauss elimination."
     },
     slot2: {
-      subject: "Engineering Chemistry", unit: 2, duration: "90 mins", studyType: "Learning",
-      mainTopic: "Fuels & Calorific Value",
-      subtopics: ["Classification of primary and secondary fuels", "Gross (HCV) vs Net (LCV) calorific value", "Dulong's formula for theoretical calorific value", "Bomb calorimeter construction, operation & corrections"],
-      learningObjective: "Derive the calorific value formula with cooling, fuse, and acid corrections for bomb calorimetry."
+      subject: "Basics of Communication Skills", unit: 1, duration: "90 mins", studyType: "Learning",
+      mainTopic: "Communication Process, 7Cs & Active Listening",
+      subtopics: [
+        "Definition and 7Cs of effective professional communication",
+        "Communication cycle: sender, encoding, medium, receiver, feedback",
+        "Physical, psychological, and semantic barriers to communication",
+        "Active, critical, and empathetic listening styles",
+        "Structured note-making techniques (Cornell method) & abbreviations"
+      ],
+      learningObjective: "Eliminate communication barriers and apply Cornell note-taking formats."
     }
   },
   {
     date: "2026-11-14",
     slot1: {
-      subject: "Problem Solving Using C", unit: 3, duration: "90 mins", studyType: "Learning",
-      mainTopic: "Functions & Storage Dynamics",
-      subtopics: ["Function prototype, definition, and invocation", "Pass by value vs Pass by reference mechanisms", "Scope, lifetime, and linkage of variables", "Recursion mechanics and stack frame visualization"],
-      learningObjective: "Design modular C programs using user-defined functions and recursive call stacks."
+      subject: "Problem Solving Using C", unit: 2, duration: "90 mins", studyType: "Practice",
+      mainTopic: "Decision Branching & Iteration Constructs",
+      subtopics: [
+        "if, if-else, nested if-else, and dangling-else ambiguity",
+        "switch-case with fall-through and break statement control",
+        "while, do-while, and for loop comparison",
+        "Loop control statements: break, continue, and goto semantics",
+        "Algorithmic loop drills: Prime testing, Armstrong, and Fibonacci"
+      ],
+      learningObjective: "Implement complex branching logic and nested iterations for numerical algorithms."
     },
     slot2: {
-      subject: "Basics of Electronics Engineering", unit: 4, duration: "90 mins", studyType: "Learning",
-      mainTopic: "Logic Gates & Universal Realization",
-      subtopics: ["Basic gates: AND, OR, NOT truth tables & symbols", "Universal gates: NAND and NOR synthesis", "Realizing AND, OR, NOT, XOR, XNOR using only NAND", "Realizing gates using only NOR gates"],
-      learningObjective: "Synthesize all fundamental logic circuits exclusively using universal NAND or NOR gates."
+      subject: "Engineering Chemistry", unit: 1, duration: "90 mins", studyType: "Practice",
+      mainTopic: "Alkalinity, Boiler Troubles & Lime-Soda Softening",
+      subtopics: [
+        "Phenolphthalein (P) & Methyl Orange (M) alkalinity titrations",
+        "Boiler troubles: Scale, sludge, priming, foaming, caustic embrittlement",
+        "Internal conditioning: Phosphate, colloidal, and calgon conditioning",
+        "Cold and Hot Lime-Soda softening processes",
+        "Lime-Soda stoichiometric chemical requirement numericals"
+      ],
+      learningObjective: "Perform stoichiometric chemical requirement calculations for boiler feed water."
     }
   },
   {
     date: "2026-11-15",
     slot1: {
-      subject: "Mathematics-I", unit: 3, duration: "90 mins", studyType: "Learning",
-      mainTopic: "Taylor & Maclaurin Series",
-      subtopics: ["Taylor's theorem with remainder", "Maclaurin series expansion of sin(x), cos(x), e^x, log(1+x)", "Taylor expansions in powers of (x-a)", "Error estimation and truncation"],
-      learningObjective: "Expand single-variable differentiable functions into infinite power series using Taylor's formula."
+      subject: "Basics of Electronics Engineering", unit: 1, duration: "90 mins", studyType: "Learning",
+      mainTopic: "Zener Diode Regulation & Binary Number Systems",
+      subtopics: [
+        "Zener diode breakdown (Zener vs Avalanche mechanism)",
+        "Zener diode as a shunt voltage regulator circuit design",
+        "Binary, octal, decimal, and hexadecimal conversions",
+        "1's complement and 2's complement representation",
+        "Signed binary subtraction using 2's complement with overflow check"
+      ],
+      learningObjective: "Design Zener voltage regulator circuits and master 2's complement arithmetic."
     },
     slot2: {
-      subject: "Basics of Communication Skills", unit: 2, duration: "90 mins", studyType: "Learning",
-      mainTopic: "Speaking Skills & Professional Delivery",
-      subtopics: ["Phonetics & correct pronunciation basics", "Body language and non-verbal kinesics", "Public speaking anxiety management", "7Cs of professional communication"],
-      learningObjective: "Master oral delivery techniques, non-verbal cues, and principles of clear technical speech."
+      subject: "Mathematics-I", unit: 2, duration: "90 mins", studyType: "Learning",
+      mainTopic: "Eigenvalues & Characteristic Vectors",
+      subtopics: [
+        "Characteristic equation |A - lambda*I| = 0",
+        "Eigenvalues computation for 2x2 and 3x3 matrices",
+        "Eigenvectors calculation for distinct and repeated eigenvalues",
+        "Properties: sum of eigenvalues = trace, product = det(A)",
+        "Eigenvalues of symmetric, orthogonal, and triangular matrices"
+      ],
+      learningObjective: "Calculate characteristic roots and linearly independent eigenvectors."
     }
   },
   {
     date: "2026-11-16",
     slot1: {
-      subject: "Engineering Chemistry", unit: 2, duration: "90 mins", studyType: "Practice",
-      mainTopic: "Coal Analysis & Carbonization",
-      subtopics: ["Proximate analysis (% moisture, volatile matter, ash, fixed carbon)", "Ultimate analysis (% C, H, N, S, O calculations)", "Significance of volatile matter in combustion", "Numerical problems on coal sample evaluation"],
-      learningObjective: "Perform quantitative proximate and ultimate analysis calculations for industrial coal grading."
+      subject: "Engineering Chemistry", unit: 1, duration: "90 mins", studyType: "Learning",
+      mainTopic: "Zeolite Softening, Ion Exchange & Desalination",
+      subtopics: [
+        "Permutit / Zeolite softening process and NaCl regeneration",
+        "Demineralization / Ion-exchange resins (cation & anion exchangers)",
+        "Regeneration reactions using dilute HCl and NaOH",
+        "Reverse Osmosis (RO) semi-permeable membranes",
+        "Electrodialysis setup and industrial utility"
+      ],
+      learningObjective: "Explain ion exchange softening and compare modern desalination methods."
     },
     slot2: {
-      subject: "Basics of Electronics Engineering", unit: 4, duration: "90 mins", studyType: "Practice",
-      mainTopic: "Boolean Algebra & K-Map Minimization",
-      subtopics: ["Boolean postulates and De Morgan's laws", "Canonical SOP (minterms) and POS (maxterms)", "3-variable and 4-variable Karnaugh Maps (K-Map)", "Don't care conditions minimization practice"],
-      learningObjective: "Minimize complex multi-variable Boolean algebraic expressions using Karnaugh Mapping."
+      subject: "Problem Solving Using C", unit: 3, duration: "90 mins", studyType: "Learning",
+      mainTopic: "1D Arrays, Searching & Sorting Algorithms",
+      subtopics: [
+        "Array declaration and contiguous memory mapping",
+        "Element traversal and boundary checking",
+        "Linear search algorithm with time complexity",
+        "Binary search algorithm on sorted vectors",
+        "Bubble sort and selection sort implementations in C"
+      ],
+      learningObjective: "Implement searching and sorting algorithms on 1D contiguous arrays."
     }
   },
   {
     date: "2026-11-17",
     slot1: {
-      subject: "Problem Solving Using C", unit: 3, duration: "90 mins", studyType: "Practice",
-      mainTopic: "2D Arrays & Matrix Algorithms",
-      subtopics: ["2D array memory row-major vs column-major order", "Matrix addition and subtraction", "Matrix multiplication algorithm with dimension checks", "Transpose of square and rectangular matrices"],
-      learningObjective: "Write clean matrix processing programs and verify boundary checks for array indexes in C."
+      subject: "Mathematics-I", unit: 2, duration: "100 mins", studyType: "Practice",
+      mainTopic: "Cayley-Hamilton Theorem & Matrix Diagonalization",
+      subtopics: [
+        "Statement and proof verification of Cayley-Hamilton theorem",
+        "Finding A^-1 and higher powers (e.g., A^4) using C-H theorem",
+        "Similarity transformation and modal matrix P",
+        "Orthogonal diagonalization of symmetric matrices D = P^-1*A*P",
+        "Index, signature, and definiteness of quadratic forms"
+      ],
+      learningObjective: "Apply Cayley-Hamilton theorem and diagonalize real symmetric matrices."
     },
     slot2: {
-      subject: "Mathematics-I", unit: 3, duration: "90 mins", studyType: "Practice",
-      mainTopic: "Indeterminate Forms & L'Hopital's Rule",
-      subtopics: ["0/0 and infinity/infinity classical forms", "0 * infinity and infinity - infinity algebraic transformations", "0^0, 1^infinity, and infinity^0 logarithmic conversions", "Repeated differentiation guidelines"],
-      learningObjective: "Evaluate indeterminate limits systematically using algebraic simplifications and L'Hopital's rule."
+      subject: "Basics of Electronics Engineering", unit: 2, duration: "90 mins", studyType: "Learning",
+      mainTopic: "BJT Fundamentals & Operating Characteristics",
+      subtopics: [
+        "Physical construction and operation of NPN and PNP transistors",
+        "Active, saturation, and cutoff biasing conditions",
+        "Common Base (CB) and Common Emitter (CE) configurations",
+        "Static input and output V-I characteristics of CE amplifier",
+        "Current gain relationships: derivations of alpha, beta, and gamma"
+      ],
+      learningObjective: "Explain BJT transistor action and derive current amplification factors."
     }
   },
   {
     date: "2026-11-18",
     slot1: {
-      subject: "Basics of Electronics Engineering", unit: 2, duration: "90 mins", studyType: "Learning",
-      mainTopic: "Introduction to BJT Fundamentals",
-      subtopics: ["NPN and PNP transistor physical construction", "Transistor biasing: forward-reverse active mode", "Common Base (CB) and Common Emitter (CE) configurations", "Input and output static characteristics of CE"],
-      learningObjective: "Explain bipolar junction transistor operation and sketch CE configuration characteristic curves."
+      subject: "Problem Solving Using C", unit: 3, duration: "90 mins", studyType: "Learning",
+      mainTopic: "Modular Functions, Scope & Recursion Mechanics",
+      subtopics: [
+        "Function prototype, definition, and invocation",
+        "Pass by value vs Pass by address/reference mechanisms",
+        "Scope, lifetime, and linkage of variables",
+        "Recursion mechanics and stack frame call stacks",
+        "Recursive implementations: Factorial, GCD, Tower of Hanoi"
+      ],
+      learningObjective: "Design modular programs using functions and recursive algorithm traces."
     },
     slot2: {
-      subject: "Basics of Communication Skills", unit: 2, duration: "90 mins", studyType: "Practice",
-      mainTopic: "Group Discussions & Debates",
-      subtopics: ["Structure of academic GDs: initiation, body, moderation", "Dealing with interruptions & concluding summaries", "Debating ethics: presenting argumentative rebuttals", "Storytelling frameworks for technical presentations"],
-      learningObjective: "Prepare constructive arguments and practice structured participation in group discussion scenarios."
+      subject: "Basics of Communication Skills", unit: 2, duration: "90 mins", studyType: "Learning",
+      mainTopic: "Phonetics, Oral Delivery & Professional Speaking",
+      subtopics: [
+        "Speech production organs and IPA overview",
+        "English vowels, diphthongs, and consonant sounds",
+        "Word stress, syllable division, and sentence intonation",
+        "Public speaking anxiety management strategies",
+        "Non-verbal communication: kinesics, proxemics, and paralinguistics"
+      ],
+      learningObjective: "Master correct phonetic pronunciation, vocal pitch, and non-verbal cues."
     }
   },
   {
     date: "2026-11-19",
     slot1: {
-      subject: "Mathematics-I", unit: 3, duration: "90 mins", studyType: "Learning",
-      mainTopic: "Curvature & Radius of Curvature",
-      subtopics: ["Curvature definition kappa = d_psi/ds", "Cartesian formula rho = [1+(y')^2]^(3/2) / y''", "Parametric form for radius of curvature", "Polar formula rho for cardioids r = a(1+cos theta)"],
-      learningObjective: "Derive and calculate the radius of curvature for Cartesian, parametric, and polar plane curves."
+      subject: "Engineering Chemistry", unit: 2, duration: "90 mins", studyType: "Learning",
+      mainTopic: "Fuels Classification & Calorific Value Determination",
+      subtopics: [
+        "Primary, secondary, solid, liquid, and gaseous fuels classification",
+        "Gross (HCV) and Net (LCV) calorific values definition",
+        "Dulong's formula for theoretical calorific value",
+        "Bomb calorimeter: construction, working procedure, and corrections",
+        "Combustion numericals based on mass and air-fuel ratio"
+      ],
+      learningObjective: "Calculate calorific values and determine HCV using bomb calorimetry."
     },
     slot2: {
-      subject: "Engineering Chemistry", unit: 2, duration: "90 mins", studyType: "Learning",
-      mainTopic: "Corrosion & Prevention",
-      subtopics: ["Dry / chemical oxidation corrosion mechanism", "Wet / electrochemical corrosion (galvanic & differential aeration)", "Factors affecting corrosion rate", "Cathodic protection: Sacrificial anode vs Impressed current"],
-      learningObjective: "Explain electrochemical corrosion reactions and evaluate protective metal coatings and cathodic methods."
+      subject: "Basics of Electronics Engineering", unit: 4, duration: "90 mins", studyType: "Learning",
+      mainTopic: "Logic Gates & Universal NAND/NOR Synthesis",
+      subtopics: [
+        "Basic logic gates: AND, OR, NOT operations and truth tables",
+        "Universal logic gates: NAND and NOR gate properties",
+        "Realizing AND, OR, NOT, XOR, XNOR using only NAND gates",
+        "Realizing fundamental logic gates using only NOR gates",
+        "Boolean algebra postulates, duality principle, and De Morgan's laws"
+      ],
+      learningObjective: "Synthesize combinational logic circuits using universal gates."
     }
   },
-
-  // WEEK 3: 20–26 Nov (Priority Unit Mastery & Advanced Problem Solving)
   {
     date: "2026-11-20",
     slot1: {
-      subject: "Mathematics-I", unit: 2, duration: "90 mins", studyType: "Practice",
-      mainTopic: "Quadratic Forms & Canonical Reduction",
-      subtopics: ["Matrix representation of quadratic forms X^T*A*X", "Orthogonal transformation method", "Index, signature, and rank of quadratic form", "Definiteness: positive definite, negative definite, indefinite"],
-      learningObjective: "Reduce real quadratic forms to canonical sum-of-squares forms and classify their definiteness."
+      subject: "Mathematics-I", unit: 3, duration: "100 mins", studyType: "Learning",
+      mainTopic: "Taylor & Maclaurin Series Expansions",
+      subtopics: [
+        "Taylor's theorem for functions of single variable with remainder",
+        "Maclaurin series expansions: sin(x), cos(x), e^x, ln(1+x)",
+        "Taylor series expansions about x = a in powers of (x - a)",
+        "Indeterminate forms: 0/0 and infinity/infinity via L'Hopital rule",
+        "Exponential indeterminate limits: 0^0, 1^infinity, infinity^0"
+      ],
+      learningObjective: "Expand single-variable functions into power series and evaluate indeterminate limits."
     },
     slot2: {
-      subject: "Problem Solving Using C", unit: 4, duration: "90 mins", studyType: "Learning",
-      mainTopic: "Pointers Fundamentals & Pointer Arithmetic",
-      subtopics: ["Address-of (&) and dereferencing (*) operators", "Pointer arithmetic: increments, decrements, pointer subtraction", "Passing pointers to functions (call by reference)", "Pointers and 1D arrays equivalence"],
-      learningObjective: "Master pointer mechanics, memory address references, and indirect variable modification in C."
+      subject: "Problem Solving Using C", unit: 3, duration: "90 mins", studyType: "Practice",
+      mainTopic: "2D Arrays & Matrix Mathematics Algorithms",
+      subtopics: [
+        "2D array memory representation: row-major vs column-major",
+        "Matrix addition, subtraction, and scalar multiplication",
+        "Matrix multiplication algorithm with dimension validations",
+        "Matrix transpose and symmetry verification",
+        "Row sums, column sums, and diagonal element algorithms"
+      ],
+      learningObjective: "Write robust 2D array programs implementing matrix algebraic operations."
     }
   },
   {
     date: "2026-11-21",
     slot1: {
-      subject: "Engineering Chemistry", unit: 3, duration: "90 mins", studyType: "Learning",
-      mainTopic: "Spectroscopy & Beer-Lambert Law",
-      subtopics: ["Electromagnetic spectrum and molecular energy states", "Beer-Lambert law mathematical derivation", "Molar absorptivity epsilon and limitations", "Numerical problems on absorbance and concentration"],
-      learningObjective: "Derive the Beer-Lambert law and calculate solute concentration from spectrophotometric absorbance."
+      subject: "Engineering Chemistry", unit: 2, duration: "90 mins", studyType: "Practice",
+      mainTopic: "Coal Analysis & Carbonization Technologies",
+      subtopics: [
+        "Proximate analysis of coal: % moisture, volatile matter, ash, fixed carbon",
+        "Ultimate analysis of coal: % Carbon, Hydrogen, Nitrogen, Sulfur, Oxygen",
+        "Significance of proximate and ultimate parameters in combustion",
+        "Metallurgical coke manufacturing: Otto Hoffmann's by-product oven",
+        "Flue gas analysis using Orsat apparatus"
+      ],
+      learningObjective: "Perform proximate and ultimate analysis calculations for industrial coal grading."
     },
     slot2: {
-      subject: "Basics of Electronics Engineering", unit: 2, duration: "90 mins", studyType: "Practice",
-      mainTopic: "Transistor Parameters & Biasing",
-      subtopics: ["Relationship between alpha, beta, and gamma", "Common Collector (CC) configuration basics", "DC load line and Operating Point (Q-point)", "Transistor operating as a digital switch"],
-      learningObjective: "Derive current gain relations and calculate DC load line operating points for BJT switches."
+      subject: "Basics of Electronics Engineering", unit: 4, duration: "90 mins", studyType: "Practice",
+      mainTopic: "Karnaugh Map (K-Map) Logic Simplification",
+      subtopics: [
+        "Canonical SOP (minterms) and POS (maxterms) expressions",
+        "2-variable, 3-variable, and 4-variable Karnaugh Maps layout",
+        "Grouping rules: pairs, quads, octets, and wrap-around adjacencies",
+        "Don't care conditions (X) and realization of minimal SOP circuits",
+        "Logic circuit schematic drafting for minimized expressions"
+      ],
+      learningObjective: "Minimize multi-variable Boolean switching expressions using 4-variable K-Maps."
     }
   },
   {
     date: "2026-11-22",
     slot1: {
-      subject: "Problem Solving Using C", unit: 3, duration: "90 mins", studyType: "Practice",
-      mainTopic: "String Processing Algorithms",
-      subtopics: ["Null-terminated character arrays in memory", "Manual coding: strlen, strcpy, strcmp without string.h", "String concatenation and substring extraction", "Checking string palindrome and anagrams"],
-      learningObjective: "Implement string operations through pointer traversals and manual character manipulation."
+      subject: "Mathematics-I", unit: 3, duration: "90 mins", studyType: "Learning",
+      mainTopic: "Asymptotes, Curvature & Mean Value Theorems",
+      subtopics: [
+        "Rolle's theorem & Lagrange's Mean Value Theorem verification",
+        "Cauchy's generalized mean value theorem",
+        "Asymptotes parallel to coordinate axes",
+        "Oblique asymptotes y = mx + c of algebraic curves",
+        "Radius of curvature rho in Cartesian coordinates [1+(y')^2]^(3/2) / y''"
+      ],
+      learningObjective: "Verify mean value theorems and compute asymptotes and radius of curvature."
     },
     slot2: {
-      subject: "Basics of Communication Skills", unit: 3, duration: "90 mins", studyType: "Learning",
-      mainTopic: "Literature: Francis Bacon's 'Of Studies'",
-      subtopics: ["Aphoristic essay style of Francis Bacon", "Three chief uses of studies: delight, ornament, ability", "Curing mental defects through diverse reading", "Key textual analysis and critical evaluation"],
-      learningObjective: "Analyze Bacon's aphoristic philosophy of learning and draft structured analytical answers."
+      subject: "Basics of Communication Skills", unit: 2, duration: "90 mins", studyType: "Practice",
+      mainTopic: "Group Discussions, Debates & Reading Comprehension",
+      subtopics: [
+        "Dynamics of academic Group Discussions (initiation, moderation, summary)",
+        "Handling interruptions and presenting balanced counterarguments",
+        "Skimming and scanning techniques for technical research papers",
+        "Vocabulary enhancement: Greek/Latin roots, prefixes, suffixes",
+        "Francis Bacon's 'Of Studies': aphoristic philosophy analysis"
+      ],
+      learningObjective: "Excel in group discussion dynamics and interpret Bacon's essays."
     }
   },
   {
     date: "2026-11-23",
     slot1: {
-      subject: "Mathematics-I", unit: 3, duration: "90 mins", studyType: "Learning",
-      mainTopic: "Mean Value Theorems & Asymptotes",
-      subtopics: ["Rolle's theorem: geometric interpretation & conditions", "Lagrange's Mean Value Theorem verification", "Cauchy's Generalized Mean Value Theorem", "Finding parallel and oblique asymptotes y = mx + c"],
-      learningObjective: "Verify Rolle's, Lagrange's, and Cauchy's MVT and determine all asymptotes of algebraic curves."
+      subject: "Problem Solving Using C", unit: 4, duration: "90 mins", studyType: "Learning",
+      mainTopic: "Pointers Fundamentals & Pointer Arithmetic",
+      subtopics: [
+        "Pointer variable declaration, initialization, and dereferencing (* and &)",
+        "Pointer arithmetic: pointer offsets, increment, decrement",
+        "Pointers and 1D arrays equivalence: *(arr + i)",
+        "Passing pointers to functions (call by reference implementation)",
+        "Pointers to pointers (double pointers) and arrays of pointers"
+      ],
+      learningObjective: "Master raw pointer memory addresses, dereferencing, and pointer arithmetic."
     },
     slot2: {
-      subject: "Engineering Chemistry", unit: 3, duration: "90 mins", studyType: "Learning",
-      mainTopic: "UV-Visible Spectroscopy",
-      subtopics: ["Principle of electronic absorption", "Electronic transitions: sigma->sigma*, n->sigma*, pi->pi*, n->pi*", "Chromophores and auxochromes definitions", "Bathochromic (red) and hypsochromic (blue) shifts"],
-      learningObjective: "Identify electronic transitions and interpret structural effects of chromophores on UV spectra."
+      subject: "Basics of Electronics Engineering", unit: 2, duration: "90 mins", studyType: "Learning",
+      mainTopic: "Transistor Biasing & Operating Point Stability",
+      subtopics: [
+        "DC load line and Quiescent point (Q-point) stabilization",
+        "Instability factors: temperature drift and beta variation",
+        "Fixed bias vs Collector-to-Base bias limitations",
+        "Voltage divider bias (Self-bias) circuit design & stability factor S",
+        "Thermal runaway prevention and heat sink utility"
+      ],
+      learningObjective: "Design voltage divider transistor biasing circuits with stable Q-points."
     }
   },
   {
     date: "2026-11-24",
     slot1: {
-      subject: "Basics of Electronics Engineering", unit: 3, duration: "90 mins", studyType: "Practice",
-      mainTopic: "Codes & Digital Logic Displays",
-      subtopics: ["BCD (8421) and Excess-3 codes conversions", "Gray code reflection and binary-to-Gray translation", "BCD addition with +6 correction rule", "Seven-segment displays: common anode vs common cathode"],
-      learningObjective: "Perform BCD arithmetic and design display decoder circuits using 7-segment logic."
+      subject: "Mathematics-I", unit: 3, duration: "90 mins", studyType: "Practice",
+      mainTopic: "Partial Derivatives & Euler's Theorem",
+      subtopics: [
+        "First and second order partial derivatives of multivariable functions",
+        "Euler's theorem for homogeneous functions of degree n",
+        "Verification of Euler's theorem for algebraic and trigonometric forms",
+        "Total differential and chain rule for partial derivatives",
+        "Jacobians definition J = ∂(u,v)/∂(x,y) and chain rule properties"
+      ],
+      learningObjective: "Evaluate multivariable partial derivatives and verify Euler's theorem."
     },
     slot2: {
-      subject: "Problem Solving Using C", unit: 4, duration: "90 mins", studyType: "Practice",
-      mainTopic: "Structures, Unions & Memory Alignment",
-      subtopics: ["struct declaration, member access (.) and arrow (->) operators", "Array of structures & nested structures", "unions vs structures memory allocation", "Memory alignment and sizeof comparisons"],
-      learningObjective: "Construct structured data records and contrast memory sharing mechanisms in structures vs unions."
+      subject: "Engineering Chemistry", unit: 3, duration: "90 mins", studyType: "Learning",
+      mainTopic: "Lubricants, Tribology & Analytical Spectroscopy",
+      subtopics: [
+        "Functions and mechanisms of lubrication: Fluid-film, Boundary, Extreme-pressure",
+        "Physical properties: Viscosity, Viscosity Index, Flash & Fire point",
+        "Beer-Lambert law mathematical derivation and limitations",
+        "UV-Visible spectroscopy: chromophores, auxochromes, bathochromic shift",
+        "1H-NMR spectroscopy: chemical shift (delta scale) and TMS reference"
+      ],
+      learningObjective: "Explain lubrication mechanisms and analyze spectroscopic principles."
     }
   },
   {
     date: "2026-11-25",
     slot1: {
-      subject: "Engineering Chemistry", unit: 3, duration: "90 mins", studyType: "Learning",
-      mainTopic: "NMR Spectroscopy & Photophysics",
-      subtopics: ["Basic principle of 1H-Nuclear Magnetic Resonance", "Nuclear shielding, deshielding & chemical shift (delta scale)", "Tetramethylsilane (TMS) reference standard", "Fluorescence vs Phosphorescence (Jablonski diagram)"],
-      learningObjective: "Explain chemical shift principles, spin-spin splitting rules, and photophysical decay processes."
+      subject: "Problem Solving Using C", unit: 4, duration: "90 mins", studyType: "Practice",
+      mainTopic: "String Processing & Dynamic Memory Allocation",
+      subtopics: [
+        "Null-terminated character arrays in memory",
+        "String functions: strlen, strcpy, strcat, strcmp, strrev",
+        "Implementing custom string algorithms without string.h",
+        "Dynamic memory allocation functions: malloc(), calloc(), realloc(), free()",
+        "Memory leak detection and dangling pointer prevention"
+      ],
+      learningObjective: "Implement robust string algorithms and dynamic heap memory allocation."
     },
     slot2: {
-      subject: "Basics of Communication Skills", unit: 3, duration: "90 mins", studyType: "Learning",
-      mainTopic: "Literature: Daniel Keyes' 'Flowers for Algernon'",
-      subtopics: ["Charlie Gordon character sketch & intellectual trajectory", "Themes: emotional maturity vs scientific hubris", "The Algernon-Gordon effect and societal alienation", "Long-form character analysis questions"],
-      learningObjective: "Examine psychological and ethical themes in Flowers for Algernon for university examinations."
+      subject: "Basics of Electronics Engineering", unit: 4, duration: "90 mins", studyType: "Practice",
+      mainTopic: "Combinational Logic: Adders & Multiplexers",
+      subtopics: [
+        "Half Adder: truth table, Boolean equations, and logic realization",
+        "Full Adder: design using two half adders and OR gate",
+        "Half Subtractor and Full Subtractor logic circuits",
+        "4-bit Ripple Carry Binary Parallel Adder",
+        "2:1 and 4:1 Multiplexer (MUX) architecture and truth tables"
+      ],
+      learningObjective: "Design binary arithmetic adders, subtractors, and multiplexers."
     }
   },
   {
     date: "2026-11-26",
     slot1: {
-      subject: "Mathematics-I", unit: 3, duration: "90 mins", studyType: "Practice",
-      mainTopic: "Extreme Values & Lagrange Multipliers",
-      subtopics: ["Maxima and minima of functions of two variables f(x, y)", "Necessary & sufficient conditions: rt - s^2 > 0 check", "Saddle points identification", "Lagrange's method of undetermined multipliers"],
-      learningObjective: "Locate extrema of bivariate functions and optimize constrained objectives using Lagrange multipliers."
+      subject: "Mathematics-I", unit: 4, duration: "100 mins", studyType: "Practice",
+      mainTopic: "Multivariable Extrema & Lagrange Multipliers",
+      subtopics: [
+        "Taylor's expansion for functions of two variables",
+        "Maxima and minima of bivariate functions f(x,y)",
+        "Discriminant test: rt - s^2 condition and saddle points",
+        "Lagrange's method of undetermined multipliers for constrained extrema",
+        "Applied word problems: shortest distance and maximum volume"
+      ],
+      learningObjective: "Locate unconstrained extrema and solve constrained optimization problems."
     },
     slot2: {
-      subject: "Problem Solving Using C", unit: 4, duration: "90 mins", studyType: "Practice",
-      mainTopic: "Dynamic Memory Allocation & Files",
-      subtopics: ["stdlib functions: malloc, calloc, realloc, and free", "Dangling pointers and memory leak prevention", "File operations: fopen, fclose, fprintf, fscanf", "Binary file record processing with fread and fwrite"],
-      learningObjective: "Allocate heap memory dynamically and build persistent file read/write modules in C."
+      subject: "Engineering Chemistry", unit: 3, duration: "90 mins", studyType: "Learning",
+      mainTopic: "Phase Rule & One-Component Water System",
+      subtopics: [
+        "Gibbs Phase Rule statement: F = C - P + 2",
+        "Definitions: Phase (P), Component (C), Degrees of Freedom (F)",
+        "One-Component Water (H2O) system: curves, areas, and triple point",
+        "Metastable supercooled water curve",
+        "Two-component Lead-Silver (Pb-Ag) eutectic system & Pattinson's process"
+      ],
+      learningObjective: "Interpret phase diagrams for single and two-component metallurgical systems."
     }
   },
-
-  // WEEK 4: 27 Nov – 3 Dec (Sessional Prep & Timed Testing Phase)
   {
     date: "2026-11-27",
     slot1: {
-      subject: "Mathematics-I", unit: 1, duration: "100 mins", studyType: "Test",
-      mainTopic: "Sessional Test 1: Matrices & Linear Systems",
-      subtopics: ["60-min timed diagnostic paper: Rank, Echelon form", "Gauss-Jordan inverse calculation problem", "Consistency determination for parameter lambda and mu", "Error logging and step-marking review"],
-      learningObjective: "Simulate examination conditions for Unit 1 and attain high accuracy under time constraints."
+      subject: "Problem Solving Using C", unit: 4, duration: "90 mins", studyType: "Practice",
+      mainTopic: "Structures, Unions & File I/O Processing",
+      subtopics: [
+        "struct declaration, member access (dot operator), memory layout",
+        "Array of structures (student record management)",
+        "Unions vs Structures: shared memory allocation comparison",
+        "File handling modes: 'r', 'w', 'a', 'rb', 'wb'",
+        "File stream operations: fopen(), fclose(), fprintf(), fscanf(), fgets()"
+      ],
+      learningObjective: "Implement structured records and persistent file read/write routines."
     },
     slot2: {
-      subject: "Engineering Chemistry", unit: 1, duration: "90 mins", studyType: "Revision",
-      mainTopic: "Water Treatment Numerical Review",
-      subtopics: ["Hardness calculations from titration data", "EDTA standard problem set walkthrough", "Cold and hot Lime-Soda numerical speed test", "Ion exchange regeneration equation drill"],
-      learningObjective: "Reinforce rapid numerical calculations for water softening and EDTA analytical chemistry."
+      subject: "Basics of Communication Skills", unit: 3, duration: "90 mins", studyType: "Learning",
+      mainTopic: "Literature Masterworks & Professional Writing",
+      subtopics: [
+        "Daniel Keyes' 'Flowers for Algernon': thematic depth and character arc",
+        "Anton Chekhov's 'The Proposal': satirical elements and dialogue dynamics",
+        "Saadat Hasan Manto's 'Toba Tek Singh': allegory of partition",
+        "Formal business letters: inquiry, quotation, and complaint formats",
+        "Resume & Curriculum Vitae design: formatting professional credentials"
+      ],
+      learningObjective: "Analyze required literature stories and draft formal business correspondence."
     }
   },
   {
     date: "2026-11-28",
     slot1: {
-      subject: "Problem Solving Using C", unit: 3, duration: "100 mins", studyType: "Test",
-      mainTopic: "Sessional Coding Test: Functions, Arrays, Pointers",
-      subtopics: ["Recursive function problem (GCD / Tower of Hanoi)", "Matrix multiplication with pointer parameters", "Dynamic memory allocation problem (malloc)", "Code syntax dry-run and bug identification"],
-      learningObjective: "Write bug-free, fully compiled C programs addressing university-level programming prompts."
+      subject: "Mathematics-I", unit: 4, duration: "90 mins", studyType: "Practice",
+      mainTopic: "Vector Differential Calculus: Gradient, Divergence, Curl",
+      subtopics: [
+        "Vector differential operator Del (∇)",
+        "Gradient of a scalar field: physical meaning and directional derivative",
+        "Unit normal vector to a level surface",
+        "Divergence of a vector field: solenoidal vector condition (div V = 0)",
+        "Curl of a vector field: irrotational vector condition (curl V = 0) & scalar potential"
+      ],
+      learningObjective: "Compute gradients, directional derivatives, divergence, and curl of vector fields."
     },
     slot2: {
-      subject: "Basics of Electronics Engineering", unit: 1, duration: "90 mins", studyType: "Revision",
-      mainTopic: "Semiconductors & Rectifiers PYQ Drilling",
-      subtopics: ["Bridge rectifier numerical calculations", "Ripple factor and efficiency derivations", "Zener diode line and load regulation problems", "Special diodes comparison table"],
-      learningObjective: "Consolidate derivations and solve previous years' sessional questions on semiconductor devices."
+      subject: "Engineering Chemistry", unit: 4, duration: "90 mins", studyType: "Learning",
+      mainTopic: "Polymers & Commercial Engineering Materials",
+      subtopics: [
+        "Addition (chain-growth) vs Condensation (step-growth) polymerization",
+        "Thermoplastic vs Thermosetting resins comparison",
+        "Preparation, properties & uses: Bakelite, Nylon-6,6, PMMA",
+        "Natural rubber vulcanization with sulfur",
+        "Synthetic elastomers: Buna-S and Buna-N rubber properties"
+      ],
+      learningObjective: "Explain polymer synthesis and compare mechanical properties of commercial plastics."
     }
   },
   {
     date: "2026-11-29",
     slot1: {
-      subject: "Mathematics-I", unit: 2, duration: "100 mins", studyType: "Test",
-      mainTopic: "Sessional Test 2: Eigenvalues & Quadratic Forms",
-      subtopics: ["Eigenvalues and eigenvectors of 3x3 symmetric matrix", "Cayley-Hamilton theorem verification and A^-1", "Orthogonal transformation to diagonal matrix", "Definiteness classification of quadratic form"],
-      learningObjective: "Score full marks in 3x3 matrix diagonalization and quadratic reduction problems."
+      subject: "Basics of Electronics Engineering", unit: 2, duration: "90 mins", studyType: "Learning",
+      mainTopic: "Field Effect Transistors (JFET & MOSFET)",
+      subtopics: [
+        "Junction Field Effect Transistor (JFET): construction and pinch-off voltage",
+        "JFET drain and transfer characteristics, Shockley's equation",
+        "MOSFET: Depletion vs Enhancement mode operations",
+        "Comparison of BJT vs FET (input impedance, thermal stability, noise)",
+        "CMOS inverter basics and digital logic advantage"
+      ],
+      learningObjective: "Analyze field effect transistor operation and compare BJT vs FET characteristics."
     },
     slot2: {
-      subject: "Basics of Communication Skills", unit: 4, duration: "90 mins", studyType: "Practice",
-      mainTopic: "Technical Writing Formats",
-      subtopics: ["Formal email writing structure and etiquettes", "Complaint and inquiry business letters", "Writing technical project progress reports", "Paragraph development with topic sentences"],
-      learningObjective: "Draft structured professional correspondence and technical reports conforming to academic formats."
+      subject: "Problem Solving Using C", unit: 1, duration: "90 mins", studyType: "Practice",
+      mainTopic: "Comprehensive C Code Drills & Pointer Tracing",
+      subtopics: [
+        "Tracing complex pointer-with-array questions",
+        "Dynamic array reallocation and memory leak avoidance",
+        "Bitwise operators practice: masks, setting, clearing, toggling bits",
+        "Comprehensive pre-sessional code review covering complete C syllabus"
+      ],
+      learningObjective: "Consolidate C programming expertise across pointers, structures, and files."
     }
   },
   {
     date: "2026-11-30",
     slot1: {
-      subject: "Engineering Chemistry", unit: 2, duration: "100 mins", studyType: "Test",
-      mainTopic: "Sessional Test: Fuels & Spectroscopy",
-      subtopics: ["Bomb calorimeter calorific value numerical", "Proximate and ultimate analysis calculation", "Beer-Lambert law calculation", "Chemical shift and 1H-NMR spectrum interpretation"],
-      learningObjective: "Execute timed solutions for fuel combustion numericals and spectroscopy analytical problems."
+      subject: "Mathematics-I", unit: 1, duration: "100 mins", studyType: "Test",
+      mainTopic: "Sessional III Math Problem Solving Drill",
+      subtopics: [
+        "20-mark mock paper problem solving: Rank, linear independence, Gauss elimination",
+        "Cayley-Hamilton inverse and power computation",
+        "Taylor series expansion and indeterminate forms evaluation",
+        "Speed and accuracy timed drill"
+      ],
+      learningObjective: "Achieve maximum marks speed on Units 1, 2, and 3 Mathematics problems."
     },
     slot2: {
-      subject: "Basics of Electronics Engineering", unit: 4, duration: "90 mins", studyType: "Revision",
-      mainTopic: "Digital Logic & K-Map Speed Drills",
-      subtopics: ["4-variable K-Map simplification with don't cares", "Universal NAND/NOR gate conversions speed drill", "Complement arithmetic edge case questions", "Seven-segment display driver truth tables"],
-      learningObjective: "Solve multi-variable logic minimization and gate synthesis problems with zero arithmetic error."
+      subject: "Engineering Chemistry", unit: 1, duration: "100 mins", studyType: "Test",
+      mainTopic: "Sessional Chemistry Numerical Speed Test",
+      subtopics: [
+        "EDTA hardness 10-mark numerical practice",
+        "Lime-Soda stoichiometric requirement problems",
+        "Bomb calorimeter GCV & LCV calculation with corrections",
+        "Proximate and ultimate coal analysis quantitative formulas"
+      ],
+      learningObjective: "Eliminate numerical calculation errors across water and fuel chemistry."
     }
   },
+
+  // ==========================================
+  // PHASE 2: SESSIONAL III FINAL SPRINT & EXAMS (1 Dec – 10 Dec 2026)
+  // 10 Days = 20 Slots
+  // ==========================================
   {
     date: "2026-12-01",
     slot1: {
@@ -430,8 +595,6 @@ const daysData = [
       learningObjective: "Review all high-yield definitions, literature themes, and professional writing rubrics."
     }
   },
-
-  // WEEK 5: 4–6 Dec (Final Sessional Revision)
   {
     date: "2026-12-04",
     slot1: {
@@ -477,8 +640,6 @@ const daysData = [
       learningObjective: "Review communicative rubrics and rest ahead of the examination week."
     }
   },
-
-  // WEEK 6: 7–10 Dec (Sessional III Examinations Period)
   {
     date: "2026-12-07",
     slot1: {
@@ -540,7 +701,10 @@ const daysData = [
     }
   },
 
-  // WEEK 7: 11–16 Dec (Mathematics Final Preparation Sprint leading to 17 Dec Exam)
+  // ==========================================
+  // PHASE 3: MATHEMATICS FINAL PREPARATION SPRINT (11 Dec – 16 Dec 2026)
+  // 6 Days = 12 Slots dedicated to Math Unit 4 and complete 4-unit integration
+  // ==========================================
   {
     date: "2026-12-11",
     slot1: {
@@ -598,236 +762,237 @@ const daysData = [
       subject: "Mathematics-I", unit: 4, duration: "90 mins", studyType: "Practice",
       mainTopic: "Surface Areas & Volumes of Revolution",
       subtopics: ["Surface area of solids generated by revolving curves", "Volume of solids of revolution about x-axis and y-axis", "Revolution of astroid and cardioid solids", "Area between intersecting plane curves"],
-      learningObjective: "Compute surface areas and volumes of revolution for standard plane curves."
+      learningObjective: "Compute surface areas and volumetric bounds for revolution geometry."
     }
   },
   {
     date: "2026-12-15",
     slot1: {
-      subject: "Mathematics-I", unit: 1, duration: "180 mins", studyType: "Test",
-      mainTopic: "Mathematics Full Syllabus 3-Hour Mock Exam",
-      subtopics: ["Strict 09:30 AM – 12:30 PM exam simulation", "Section A: Compulsory short answer questions", "Sections B, C, D: Long problems from Units 1, 2, 3, 4", "Target 55+/60 external marks"],
-      learningObjective: "Execute a full-length 3-hour examination paper to master time management and presentation."
+      subject: "Mathematics-I", unit: 1, duration: "150 mins", studyType: "Test",
+      mainTopic: "Full Mathematics Mock Exam 1 (3-Hour Timed Paper)",
+      subtopics: ["Strict exam-hall timed conditions (100 marks standard)", "Section A: 10 short compulsory questions", "Sections B, C, D: 4 long-answer problems from all 4 units", "Detailed self-marking against university rubrics"],
+      learningObjective: "Simulate exact end-semester testing conditions and eliminate pacing errors."
     },
     slot2: {
-      subject: "Mathematics-I", unit: 4, duration: "75 mins", studyType: "Revision",
-      mainTopic: "Mock Paper Error Rectification",
-      subtopics: ["Scoring mock paper against PIET evaluation rubrics", "Re-solving all calculation errors in double integrals", "Clarifying boundary limits for change of order", "Step-by-step presentation polish"],
-      learningObjective: "Eliminate recurring errors and consolidate high-scoring problem solving methods."
+      subject: "Mathematics-I", unit: 4, duration: "90 mins", studyType: "Revision",
+      mainTopic: "Post-Mock Error Diagnostics & Weak Area Remediation",
+      subtopics: ["Review incorrect steps in integrals or matrices", "Rework ambiguous limit calculations", "Re-verify Beta-Gamma reduction formulas", "Ensure clear notation for vectors and limits"],
+      learningObjective: "Diagnose point deductions from Mock 1 and solidify step-by-step mathematical presentation."
     }
   },
   {
     date: "2026-12-16",
     slot1: {
-      subject: "Mathematics-I", unit: 1, duration: "90 mins", studyType: "Revision",
-      mainTopic: "Final Mathematics Formula Scan",
-      subtopics: ["Formulas across all 4 units active recall", "Rank, eigenvalues, series, curvature, and integrals cheat sheet", "Verifying theorem statements (Cayley-Hamilton, Rolle, Lagrange)", "Stationery, calculator, and admit card preparation"],
-      learningObjective: "Complete a thorough formula scan and enter the examination with calm confidence."
+      subject: "Mathematics-I", unit: 1, duration: "120 mins", studyType: "Revision",
+      mainTopic: "Complete Mathematics Formula & Derivation Recap",
+      subtopics: ["Review 4-page master formula sheet", "All standard integral forms and transformations", "Matrix eigenvalue shortcuts and verification rules", "Calculator configuration (matrices, degrees/radians)"],
+      learningObjective: "Achieve calm, photographic recall of every theorem, proof, and formula across all 4 units."
     },
     slot2: {
       subject: "Mathematics-I", unit: 1, duration: "60 mins", studyType: "Revision",
-      mainTopic: "Calibrated Rest & Pre-Exam Focus",
-      subtopics: ["Light mental walkthrough of exam sequence", "Rest and early sleep for sharp cognitive alertness"],
-      learningObjective: "Ensure peak cognitive energy and confidence for tomorrow morning's paper."
+      mainTopic: "Exam Day Protocol, Mental Calm & Early Rest",
+      subtopics: ["Stationery checklist: Scientific calculator, admit card, pens, ruler", "Time management plan for 3-hour exam (50m calculus, 45m matrices, 45m integrals, 40m revision)", "Nutritious meal and early sleep by 10 PM"],
+      learningObjective: "Lock in mental serenity and physical readiness for the 17 December Mathematics-I Examination."
     }
   },
 
-  // WEEK 8: 17–23 Dec (Exam 1: Math Day + Transition to BEE & C)
+  // ==========================================
+  // PHASE 4: OFFICIAL EXAM 1 & ELECTRONICS SPRINT (17 Dec – 30 Dec 2026)
+  // 14 Days = 28 Slots (17 Dec Exam + 12 prep days + 30 Dec Exam)
+  // ==========================================
   {
     date: "2026-12-17",
     slot1: {
       subject: "Mathematics-I", unit: 1, duration: "180 mins", studyType: "Official Exam",
       mainTopic: "OFFICIAL EXAM: Engineering Mathematics-I",
-      subtopics: ["Paper 1 of Semester 1 Examinations", "Time: 09:30 AM – 12:30 PM (3 Hours)", "Full Syllabus (Units 1, 2, 3, 4)", "Max External Marks: 60 (4 Credits)"],
-      learningObjective: "Execute the first theory examination with poise and clear mathematical presentation."
+      subtopics: ["FIRST OFFICIAL PAPER of End Semester Examinations", "Time: 09:30 AM – 12:30 PM (3 Hours)", "Full Syllabus (Units 1, 2, 3, 4)", "Max External Marks: 60 (4 Credits)"],
+      learningObjective: "Execute the Mathematics-I end-semester exam with maximum precision and structured derivations."
     },
     slot2: {
-      subject: "Basics of Electronics Engineering", unit: 1, duration: "60 mins", studyType: "Learning",
-      mainTopic: "Post-Exam Recovery & BEE Kick-Off",
-      subtopics: ["Light mental break after Mathematics paper", "Transition to next exam: Basics of Electronics (30 Dec)", "Overview of BEE 4-unit syllabus and revision plan", "Light review of semiconductor diode rectifiers"],
-      learningObjective: "Reset focus after the Mathematics paper and initiate the 13-day BEE preparation sprint."
+      subject: "Mathematics-I", unit: 1, duration: "60 mins", studyType: "Revision",
+      mainTopic: "Exam Decompression & Electronics Roadmap Transition",
+      subtopics: ["Decompress and pack away Mathematics textbooks", "Review syllabus breakdown for Basics of Electronics Engineering", "12 full days available until 30 December exam", "Light evening walk and mental reset"],
+      learningObjective: "Cleanly transition mental focus from Mathematics to Basics of Electronics Engineering."
     }
   },
   {
     date: "2026-12-18",
     slot1: {
-      subject: "Basics of Electronics Engineering", unit: 1, duration: "100 mins", studyType: "Learning",
-      mainTopic: "Semiconductors & Special Diodes",
-      subtopics: ["Doping, energy band diagrams, and PN junction physics", "Half-wave and full-wave bridge rectifier derivations", "Zener diode as voltage regulator with line and load variations", "Tunnel diode, Varactor diode, and Photodiode characteristics"],
-      learningObjective: "Master Unit 1 semiconductor devices, rectifier derivations, and diode regulation circuits."
+      subject: "Basics of Electronics Engineering", unit: 1, duration: "120 mins", studyType: "Learning",
+      mainTopic: "Semiconductor Diodes & Special Devices",
+      subtopics: ["Energy band diagrams (conductors, insulators, semiconductors)", "PN junction barrier potential and temperature dependence", "Zener breakdown vs Avalanche breakdown characteristics", "Varactor diode, Photodiode, Solar cell, and Schottky diode principles"],
+      learningObjective: "Derive diode equations and explain operational physics of specialized junction devices."
     },
     slot2: {
-      subject: "Problem Solving Using C", unit: 1, duration: "90 mins", studyType: "Learning",
-      mainTopic: "C Fundamentals & Algorithm Design",
-      subtopics: ["Computer architecture and compilation workflow", "Algorithm flowcharts and pseudo-code conventions", "Number systems in computer memory", "Header files, main() anatomy, and standard I/O"],
-      learningObjective: "Review foundational computer problem-solving concepts and standard algorithm representations."
+      subject: "Basics of Electronics Engineering", unit: 1, duration: "90 mins", studyType: "Practice",
+      mainTopic: "Rectifiers, Filters & Voltage Regulators",
+      subtopics: ["Derivations: Ripple factor for Half-wave, Full-wave center-tapped and Bridge rectifiers", "Efficiency eta and Peak Inverse Voltage (PIV) comparisons", "Capacitor and LC filter smoothing analysis", "Zener shunt voltage regulator: line and load regulation numericals"],
+      learningObjective: "Solve numerical problems on rectifier ripple parameters and Zener regulator circuit design."
     }
   },
   {
     date: "2026-12-19",
     slot1: {
-      subject: "Basics of Electronics Engineering", unit: 2, duration: "100 mins", studyType: "Learning",
-      mainTopic: "BJT Configurations & Characteristics",
-      subtopics: ["Transistor action and carrier transport in CE, CB, CC", "Input and output static characteristics of CE mode", "Alpha, beta, and gamma mathematical relationships", "Base width modulation (Early effect) and punch-through"],
-      learningObjective: "Understand BJT physics across CB, CE, and CC configurations and derive current amplification factors."
+      subject: "Basics of Electronics Engineering", unit: 2, duration: "120 mins", studyType: "Learning",
+      mainTopic: "BJT Configurations & Small Signal Models",
+      subtopics: ["NPN vs PNP construction and current flow equations (IE = IB + IC)", "Common Base (CB), Common Emitter (CE), Common Collector (CC) configurations", "Input and output static characteristics of CE amplifier", "Hybrid (h-parameter) model of CE transistor equivalent circuit"],
+      learningObjective: "Analyze BJT configuration topologies and develop low-frequency h-parameter models."
     },
     slot2: {
-      subject: "Problem Solving Using C", unit: 2, duration: "90 mins", studyType: "Practice",
-      mainTopic: "Operators, Storage Classes & Control",
-      subtopics: ["Bitwise operations (&, |, ^, ~, <<, >>)", "Storage classes behavior: auto, extern, static, register", "Nested loops and break/continue jump logic", "Output prediction questions on tricky operator precedence"],
-      learningObjective: "Code exercises on bitwise operations and master storage class lifetimes in C."
+      subject: "Basics of Electronics Engineering", unit: 2, duration: "90 mins", studyType: "Practice",
+      mainTopic: "Transistor Biasing & Stability Factors",
+      subtopics: ["DC load line construction and Q-point selection on CE curves", "Stability factor S = dIC/dICO definition and significance", "Fixed bias and Collector-to-Base bias analysis", "Voltage divider bias (Self-bias) circuit design and stability derivation"],
+      learningObjective: "Calculate exact operating points and stability factors for voltage divider bias networks."
     }
   },
   {
     date: "2026-12-20",
     slot1: {
-      subject: "Basics of Electronics Engineering", unit: 2, duration: "100 mins", studyType: "Practice",
-      mainTopic: "BJT as Switch & Operating Point (Q-Point)",
-      subtopics: ["DC load line equation and plotting on output curves", "Operating point (Q-point) selection for active amplification", "Thermal runaway and stabilization necessity", "Transistor working as an inverter switch in saturation and cutoff"],
-      learningObjective: "Calculate DC load line parameters and design transistor digital inverter switches."
+      subject: "Basics of Electronics Engineering", unit: 2, duration: "120 mins", studyType: "Learning",
+      mainTopic: "Field Effect Transistors: JFET & MOSFET",
+      subtopics: ["Junction Field Effect Transistor (JFET): construction and operation", "Pinch-off voltage Vp and channel ohmic region", "JFET drain and transfer characteristics (Shockley's equation)", "MOSFET: Depletion type vs Enhancement type construction and V-I curves"],
+      learningObjective: "Explain field effect transistor operation and compare JFET vs MOSFET performance metrics."
     },
     slot2: {
-      subject: "Basics of Communication Skills", unit: 3, duration: "90 mins", studyType: "Learning",
-      mainTopic: "Literature: Anton Chekhov's 'The Proposal'",
-      subtopics: ["One-act farce structure and Russian societal satire", "Characters: Lomov, Natalya Stepanovna, and Chubukov", "Petty squabbles over Oxen Meadows and hunting dogs", "Satire on marriage of convenience in 19th-century society"],
-      learningObjective: "Analyze dramatic satire and character motivations in Chekhov's 'The Proposal'."
+      subject: "Basics of Electronics Engineering", unit: 2, duration: "90 mins", studyType: "Practice",
+      mainTopic: "FET Biasing & BJT vs FET Comparisons",
+      subtopics: ["Fixed bias and Self-bias networks for JFET amplifiers", "Graphical analysis of JFET Q-point using transfer curves", "Comprehensive comparison table: BJT vs JFET vs MOSFET", "Input impedance, thermal stability, and noise figure distinctions"],
+      learningObjective: "Design JFET self-bias networks and articulate comparative advantages of field-effect devices."
     }
   },
   {
     date: "2026-12-21",
     slot1: {
-      subject: "Basics of Electronics Engineering", unit: 3, duration: "100 mins", studyType: "Practice",
-      mainTopic: "Digital Systems & Number Systems",
-      subtopics: ["Base-r conversions (binary, octal, decimal, hex)", "Signed magnitude, 1's complement, and 2's complement", "2's complement addition/subtraction and overflow detection", "BCD code, Excess-3 code, and Gray code arithmetic"],
-      learningObjective: "Master all digital number systems and solve complement arithmetic problems."
+      subject: "Basics of Electronics Engineering", unit: 3, duration: "120 mins", studyType: "Practice",
+      mainTopic: "Number Systems, Signed Arithmetic & Codes",
+      subtopics: ["Radix conversions: Binary, Octal, Decimal, Hexadecimal, Base-r", "Signed magnitude, 1's complement, and 2's complement representations", "Binary addition, subtraction using 2's complement with overflow rules", "BCD (8421), Excess-3, Gray code, and alphanumeric ASCII codes"],
+      learningObjective: "Perform conversions, signed complement arithmetic, and code translations without errors."
     },
     slot2: {
-      subject: "Problem Solving Using C", unit: 3, duration: "90 mins", studyType: "Practice",
-      mainTopic: "Functions & Recursion Deep Dive",
-      subtopics: ["Pass by value vs pass by pointer address", "Static variables inside functions", "Recursion mechanics: Fibonacci, factorial, GCD, Tower of Hanoi", "Call stack behavior and recursion termination conditions"],
-      learningObjective: "Implement recursive algorithms and trace memory stack frames during execution."
+      subject: "Basics of Electronics Engineering", unit: 4, duration: "90 mins", studyType: "Learning",
+      mainTopic: "Boolean Algebra Theorems & Standard Forms",
+      subtopics: ["Boolean postulates: Huntington's axioms and algebraic identities", "De Morgan's first and second theorems with truth table proofs", "Duality principle and Shannon's expansion theorem", "Canonical SOP (minterms) and POS (maxterms) standard representations"],
+      learningObjective: "Apply Boolean algebraic postulates and transform functions into canonical minterm expansions."
     }
   },
   {
     date: "2026-12-22",
     slot1: {
-      subject: "Basics of Electronics Engineering", unit: 4, duration: "100 mins", studyType: "Learning",
-      mainTopic: "Logic Gates & Boolean Simplification",
-      subtopics: ["Standard Boolean theorems and dual forms", "Canonical SOP (minterms) and POS (maxterms)", "Universal gate synthesis (NAND only and NOR only)", "XOR and XNOR gate properties and parity generator"],
-      learningObjective: "Express Boolean functions in standard canonical forms and synthesize using universal gates."
+      subject: "Basics of Electronics Engineering", unit: 4, duration: "120 mins", studyType: "Practice",
+      mainTopic: "Logic Gates & Universal Circuit Synthesis",
+      subtopics: ["Basic gates: AND, OR, NOT operations, symbols, and truth tables", "Universal gates: NAND and NOR synthesis of all basic and compound gates", "Exclusive-OR (XOR) and Exclusive-NOR (XNOR) properties and parity generation", "NAND-NAND and NOR-NOR two-level logic implementations"],
+      learningObjective: "Synthesize arbitrary multi-variable logic functions exclusively using universal gate architectures."
     },
     slot2: {
-      subject: "Engineering Chemistry", unit: 4, duration: "90 mins", studyType: "Learning",
-      mainTopic: "Polymers & Engineering Materials",
-      subtopics: ["Polymerization mechanisms (addition vs condensation)", "Preparation, properties, and applications of Teflon", "Polyethylene (LDPE vs HDPE structures)", "Urea-Formaldehyde (UF) and Phenol-Formaldehyde (Bakelite) resins"],
-      learningObjective: "Explain industrial polymer synthesis and distinguish thermoplastic vs thermosetting resins."
+      subject: "Basics of Electronics Engineering", unit: 4, duration: "90 mins", studyType: "Practice",
+      mainTopic: "K-Map Simplification: 3 and 4 Variables",
+      subtopics: ["K-Map grid layout, Gray code adjacency, and cell numbering", "Grouping rules: pairs (reduce 1 var), quads (reduce 2 vars), octets (reduce 3 vars)", "Overlapping groups, wrap-around adjacencies, and redundant group elimination", "Don't care conditions (X) and realization of minimal SOP circuits"],
+      learningObjective: "Minimize complex 4-variable Boolean switching functions using systematic K-Map reduction."
     }
   },
   {
     date: "2026-12-23",
     slot1: {
-      subject: "Basics of Electronics Engineering", unit: 4, duration: "100 mins", studyType: "Practice",
-      mainTopic: "K-Map Minimization & Displays",
-      subtopics: ["4-variable K-Map minimization with don't care conditions", "Prime implicants and essential prime implicants", "Seven-segment display driver truth table (BCD to 7-segment)", "LED vs LCD working principles and comparison"],
-      learningObjective: "Simplify complex 4-variable logic functions and design display decoding logic."
+      subject: "Basics of Electronics Engineering", unit: 4, duration: "120 mins", studyType: "Learning",
+      mainTopic: "Combinational Circuits: Adders & Subtractors",
+      subtopics: ["Half Adder: truth table, Boolean equations, and logic realization", "Full Adder: design using two half adders and OR gate", "Half Subtractor and Full Subtractor logic circuits", "4-bit Ripple Carry Binary Parallel Adder (7483 architecture)"],
+      learningObjective: "Design and explain operation of fundamental binary addition and subtraction logic circuits."
     },
     slot2: {
-      subject: "Problem Solving Using C", unit: 3, duration: "90 mins", studyType: "Practice",
-      mainTopic: "Multi-Dimensional Arrays & Strings",
-      subtopics: ["2D arrays: matrix addition, multiplication, transpose", "Strings in memory and manual string algorithms", "Palindrome, anagram, word count implementation", "Array of strings / char pointers"],
-      learningObjective: "Code clean 2D matrix algorithms and pointer-based string manipulation routines in C."
+      subject: "Basics of Electronics Engineering", unit: 4, duration: "90 mins", studyType: "Learning",
+      mainTopic: "Multiplexers, Encoders & Decoders",
+      subtopics: ["Multiplexers (MUX): 2:1, 4:1, and 8:1 architecture and truth tables", "Implementing Boolean functions using multiplexers without extra gates", "Demultiplexers (DEMUX) and Decoder circuits (3-to-8 decoder)", "Priority Encoders and BCD to 7-segment display decoders"],
+      learningObjective: "Design multiplexer-based data routing networks and display decoder drivers."
     }
   },
-
-  // WEEK 9: 24–30 Dec (BEE Sprint leading to 30 Dec Exam)
   {
     date: "2026-12-24",
     slot1: {
-      subject: "Basics of Electronics Engineering", unit: 1, duration: "100 mins", studyType: "Revision",
-      mainTopic: "BEE Units 1 & 2 Comprehensive Review",
-      subtopics: ["Semiconductor diode rectifiers and ripple derivations", "Zener voltage regulator design calculations", "BJT CE configurations static curves and Q-point", "Transistor digital inverter switch problems"],
-      learningObjective: "Consolidate Units 1 and 2 of Electronics with accurate circuit schematics and derivations."
+      subject: "Basics of Electronics Engineering", unit: 1, duration: "120 mins", studyType: "Revision",
+      mainTopic: "Electronics Comprehensive Circuit Schematic Review",
+      subtopics: ["Redraw all diode circuits: rectifiers, clippers, clampers, regulators", "Redraw CE transistor bias networks and CE amplifier circuit with capacitors", "Redraw JFET and MOSFET cross-sectional structures and symbols", "Redraw 4-bit parallel adder and 4:1 MUX internal logic diagrams"],
+      learningObjective: "Memorize and reproduce exact circuit schematics, component polarities, and pin assignments."
     },
     slot2: {
-      subject: "Basics of Communication Skills", unit: 3, duration: "90 mins", studyType: "Learning",
-      mainTopic: "Literature: Saadat Hasan Manto's 'Toba Tek Singh'",
-      subtopics: ["Partition trauma and political absurdity theme", "Bishan Singh (Toba Tek Singh) character study", "Symbolism of no-man's land between the two borders", "Critical textual analysis and long essay answers"],
-      learningObjective: "Analyze socio-political satire and Partition trauma in Manto's 'Toba Tek Singh'."
+      subject: "Basics of Electronics Engineering", unit: 2, duration: "90 mins", studyType: "Revision",
+      mainTopic: "Derivations & Formula Sheet Consolidation",
+      subtopics: ["Assemble 3-page master formula sheet for Electronics", "Review rectifier ripple factor derivations (HWR = 1.21, FWR = 0.482)", "Review transistor alpha vs beta relations: beta = alpha / (1 - alpha)", "Review stability factor formulas S = (1+beta) / (1 - beta*(dIB/dIC))"],
+      learningObjective: "Lock in all mathematical derivations and analytical parameters for Electronics Unit 1 and 2."
     }
   },
   {
     date: "2026-12-25",
     slot1: {
-      subject: "Basics of Electronics Engineering", unit: 3, duration: "100 mins", studyType: "Revision",
-      mainTopic: "BEE Units 3 & 4 Comprehensive Review",
-      subtopics: ["Number system conversions and 2's complement arithmetic", "BCD addition with correction rule", "4-variable K-Map minimization problem solving", "Universal NAND/NOR gate implementations"],
-      learningObjective: "Attain speed and accuracy in solving digital system arithmetic and K-Map logic minimization."
+      subject: "Basics of Electronics Engineering", unit: 3, duration: "120 mins", studyType: "Practice",
+      mainTopic: "Digital Logic Speed Drilling: PYQ Focus",
+      subtopics: ["Solve 10 previous years' 4-variable K-Map problems under 5 minutes each", "Solve 5 universal gate realization questions", "Solve 5 complement arithmetic subtraction questions with overflow flags", "Verify Boolean identity proofs using algebraic and truth table methods"],
+      learningObjective: "Achieve 100% speed and precision on Units 3 and 4 digital electronics university questions."
     },
     slot2: {
-      subject: "Problem Solving Using C", unit: 4, duration: "90 mins", studyType: "Practice",
-      mainTopic: "Pointers, DMA & File Handling",
-      subtopics: ["Pointer arithmetic and pointer to pointer", "Dynamic memory allocation: malloc, calloc, realloc, free", "Structures and unions memory comparisons", "File handling: reading and writing text/binary records"],
-      learningObjective: "Implement dynamic heap memory allocation and file persistence logic in C."
+      subject: "Basics of Electronics Engineering", unit: 1, duration: "90 mins", studyType: "Revision",
+      mainTopic: "Special Diodes & Optoelectronic Review",
+      subtopics: ["Zener vs Avalanche breakdown comparative table", "Photodiode reverse-bias operation and V-I curves", "Light Emitting Diode (LED): materials (GaAs, GaP) and direct bandgap physics", "Varactor diode capacitance-voltage relationship C proportional to V^-1/2"],
+      learningObjective: "Master short-answer 5-mark theory questions on optoelectronic and specialized diode devices."
     }
   },
   {
     date: "2026-12-26",
     slot1: {
-      subject: "Basics of Electronics Engineering", unit: 1, duration: "100 mins", studyType: "Practice",
-      mainTopic: "BEE Circuit Schematics & Numerical Mastery",
-      subtopics: ["Rectifier numericals: ripple factor, efficiency, PIV", "Zener diode series resistor and load current bounds", "Transistor DC load line and beta parameter calculations", "K-Map POS and SOP dual forms speed test"],
-      learningObjective: "Master all numerical formulas and circuit diagram conventions in Electronics."
+      subject: "Basics of Electronics Engineering", unit: 1, duration: "150 mins", studyType: "Test",
+      mainTopic: "Full Electronics Mock Exam 1 (3-Hour Timed Paper)",
+      subtopics: ["Full syllabus mock paper (60 external marks format)", "Section A: 10 compulsory questions covering all 4 units", "Section B: Rectifiers and BJT characteristics questions", "Section C: FET amplifiers, K-Maps, and combinational adders/multiplexers"],
+      learningObjective: "Evaluate comprehensive preparation under simulated 3-hour examination constraints."
     },
     slot2: {
-      subject: "Basics of Communication Skills", unit: 4, duration: "90 mins", studyType: "Practice",
-      mainTopic: "BOC Writing Formats & Grammar",
-      subtopics: ["Formal email writing guidelines and templates", "Business and official correspondence letters", "Technical reports and event report formats", "Précis writing and paragraph coherence"],
-      learningObjective: "Produce polished formal business correspondence and technical project reports."
+      subject: "Basics of Electronics Engineering", unit: 1, duration: "90 mins", studyType: "Revision",
+      mainTopic: "Mock 1 Error Analysis & Circuit Diagram Clean-up",
+      subtopics: ["Identify dropped marks: missing axis labels, incomplete formulas, logic errors", "Redraw any messy circuit diagrams with proper ruler lines and labels", "Practice neat handwriting presentation for derivations", "Review university marking scheme criteria"],
+      learningObjective: "Refine circuit drawing neatness and eliminate recurring algebraic slip-ups."
     }
   },
   {
     date: "2026-12-27",
     slot1: {
-      subject: "Basics of Electronics Engineering", unit: 1, duration: "120 mins", studyType: "Test",
-      mainTopic: "BEE Full Syllabus 3-Hour Timed Mock Paper",
-      subtopics: ["Strict 3-hour exam simulation (Units 1, 2, 3, 4)", "Circuit diagrams, characteristic curves, derivations", "K-Map minimization and universal gate synthesis", "Target 55+/60 external marks"],
-      learningObjective: "Evaluate examination pacing, presentation neatness, and accuracy on a full BEE mock paper."
+      subject: "Basics of Electronics Engineering", unit: 1, duration: "120 mins", studyType: "Revision",
+      mainTopic: "Complete Units 1 & 2 High-Yield Question Sprint",
+      subtopics: ["Bridge rectifier with capacitor filter derivation walkthrough", "CE transistor configuration input/output curves explanation walkthrough", "Voltage divider bias stability factor proof walkthrough", "JFET pinch-off and transfer characteristics derivation walkthrough"],
+      learningObjective: "Rehearse comprehensive 12-mark university question answers for analog electronics."
     },
     slot2: {
-      subject: "Basics of Electronics Engineering", unit: 2, duration: "75 mins", studyType: "Revision",
-      mainTopic: "BEE Mock Paper Error Analysis",
-      subtopics: ["Reviewing all diagram labels and polarities", "Re-checking K-Map minimization groupings", "Correcting transistor bias calculation mistakes"],
-      learningObjective: "Rectify errors and reinforce high-yield scoring sections."
+      subject: "Basics of Electronics Engineering", unit: 3, duration: "90 mins", studyType: "Revision",
+      mainTopic: "Complete Units 3 & 4 High-Yield Question Sprint",
+      subtopics: ["Universal NAND realization of Full Adder walkthrough", "4-variable K-Map with 3 don't cares step-by-step presentation", "8:1 MUX realization of 4-variable logic function walkthrough", "2's complement signed arithmetic boundary case walkthrough"],
+      learningObjective: "Rehearse comprehensive 12-mark university question answers for digital electronics."
     }
   },
   {
     date: "2026-12-28",
     slot1: {
-      subject: "Basics of Electronics Engineering", unit: 1, duration: "100 mins", studyType: "Revision",
-      mainTopic: "BEE Formula Flashcards & Question Bank",
-      subtopics: ["Ripple factor, rectification efficiency, and form factor formulas", "Alpha-beta-gamma current amplification relations", "Boolean algebra theorems & De Morgan's laws", "Truth tables of logic gates and displays"],
-      learningObjective: "Achieve instant recall of all electronic formulas, truth tables, and characteristics."
+      subject: "Basics of Electronics Engineering", unit: 1, duration: "120 mins", studyType: "Revision",
+      mainTopic: "Final Formula Sheet & Rapid Definition Recall",
+      subtopics: ["Active recall test: recite all 25 core Electronics formulas from blank paper", "Define: PIV, Ripple factor, Alpha, Beta, Stability factor, Pinch-off, Minterm", "Review common exam traps: active region biasing polarities, inverted K-Map cells", "Final check of all question choices across previous 5 years' papers"],
+      learningObjective: "Attain instant mental retrieval of every formula, definition, and circuit schematic."
     },
     slot2: {
-      subject: "Basics of Communication Skills", unit: 1, duration: "80 mins", studyType: "Revision",
-      mainTopic: "BOC Listening & Speaking Skills Review",
-      subtopics: ["Active listening and barrier mitigation checklist", "7Cs of communication principles", "Phonetics and non-verbal kinesics review"],
-      learningObjective: "Review foundational communication principles and definitions ahead of BOC prep."
+      subject: "Basics of Electronics Engineering", unit: 1, duration: "60 mins", studyType: "Revision",
+      mainTopic: "Mental Serenity & Physical Preparation",
+      subtopics: ["Admit card, stationery, scientific calculator checked and packed", "Restful evening review without learning new topics", "Nutritious meal and proper sleep by 10 PM"],
+      learningObjective: "Attain physical rest and peak cognitive readiness for tomorrow's Electronics exam."
     }
   },
   {
     date: "2026-12-29",
     slot1: {
       subject: "Basics of Electronics Engineering", unit: 1, duration: "90 mins", studyType: "Revision",
-      mainTopic: "Final BEE Diagram & Derivations Polish",
-      subtopics: ["Redrawing all core circuits from memory", "Zener regulator, Bridge rectifier, CE configuration curves", "Reviewing 4-variable K-Map groupings", "Exam kit (stationery, admit card) preparation"],
-      learningObjective: "Finalize visual recall of electronic circuits and enter the examination with confidence."
+      mainTopic: "Pre-Exam Formula Walkthrough & Calm Review",
+      subtopics: ["Glance through master circuit diagram sheet one last time", "Review 4-variable K-Map grouping rules", "Verify calculator radix mode (HEX, DEC, BIN)", "Relaxation and confidence reinforcement"],
+      learningObjective: "Calm final review of key circuit schematics and digital formulas ahead of exam morning."
     },
     slot2: {
       subject: "Basics of Electronics Engineering", unit: 1, duration: "60 mins", studyType: "Revision",
-      mainTopic: "Pre-Exam Calibrated Rest",
-      subtopics: ["Calm mental review of question selection strategy", "Early sleep for peak analytical clarity tomorrow"],
-      learningObjective: "Ensure maximum mental energy for tomorrow's Electronics examination."
+      mainTopic: "Early Rest & Exam Day Focus",
+      subtopics: ["Early dinner and complete mental rest", "Mental walkthrough of exam timing: 45 min per section", "Early night for fresh morning performance"],
+      learningObjective: "Arrive at optimal rest state for the 30 December Electronics Engineering exam."
     }
   },
   {
@@ -835,76 +1000,79 @@ const daysData = [
     slot1: {
       subject: "Basics of Electronics Engineering", unit: 1, duration: "180 mins", studyType: "Official Exam",
       mainTopic: "OFFICIAL EXAM: Basics of Electronics Engineering",
-      subtopics: ["Paper 2 of Semester 1 Examinations", "Time: 09:30 AM – 12:30 PM (3 Hours)", "Full Syllabus (Semiconductors, BJT, Digital, Gates)", "Max External Marks: 60 (3 Credits)"],
-      learningObjective: "Execute the Electronics examination with high precision in circuit diagrams and derivations."
+      subtopics: ["SECOND OFFICIAL PAPER of End Semester Examinations", "Time: 09:30 AM – 12:30 PM (3 Hours)", "Full Syllabus (Units 1, 2, 3, 4)", "Max External Marks: 60 (3 Credits)"],
+      learningObjective: "Deliver precise schematics, accurate derivations, and minimal K-Maps in the Electronics exam."
     },
     slot2: {
-      subject: "Basics of Communication Skills", unit: 3, duration: "60 mins", studyType: "Learning",
-      mainTopic: "Post-Exam Reset & BOC Kick-Off",
-      subtopics: ["Light break after Electronics paper", "Transition to next exam: Communication Skills (4 Jan)", "Literature review plan: Of Studies, Algernon, The Proposal, Toba Tek Singh"],
-      learningObjective: "Reset mental state and commence the 4-day Communication Skills preparation block."
+      subject: "Basics of Communication Skills", unit: 1, duration: "60 mins", studyType: "Revision",
+      mainTopic: "Electronics Decompression & BOC Roadmap Kickoff",
+      subtopics: ["Pack away Electronics materials", "Review schedule for Basics of Communication Skills (Exam on 4 January)", "4 full days to master formats, vocabulary, and literature stories", "Light reading of short story summaries in the evening"],
+      learningObjective: "Transition mental focus smoothly into Basics of Communication Skills preparation."
     }
   },
 
-  // WEEK 10: 31 Dec – 6 Jan (BOC Sprint leading to 4 Jan Exam + Chemistry Kickoff)
+  // ==========================================
+  // PHASE 5: BASICS OF COMMUNICATION SKILLS SPRINT (31 Dec 2026 – 4 Jan 2027)
+  // 5 Days = 10 Slots (4 prep days + 4 Jan Exam)
+  // ==========================================
   {
     date: "2026-12-31",
     slot1: {
-      subject: "Basics of Communication Skills", unit: 3, duration: "100 mins", studyType: "Learning",
-      mainTopic: "Literature Master Analysis: Essays & Short Fiction",
-      subtopics: ["Francis Bacon's 'Of Studies': aphoristic wisdom & quotes", "Daniel Keyes' 'Flowers for Algernon': thematic depth & character arc", "Structuring high-scoring 10-mark literature answers", "Textual references and thematic summaries"],
-      learningObjective: "Master in-depth textual analysis and essay responses for Bacon and Keyes."
+      subject: "Basics of Communication Skills", unit: 1, duration: "120 mins", studyType: "Learning",
+      mainTopic: "Communication Theory, Models & Barriers",
+      subtopics: ["Shannon-Weaver and Berlo's SMCR communication models", "The 7Cs of professional communication in detail with examples", "Internal, external, organizational, and socio-psychological barriers", "Active vs passive listening: strategies for overcoming perceptual biases", "Note-taking and note-making: Cornell layout and summary methods"],
+      learningObjective: "Master foundational communication theory, 7Cs rubrics, and structural barrier analysis."
     },
     slot2: {
-      subject: "Basics of Communication Skills", unit: 1, duration: "90 mins", studyType: "Learning",
-      mainTopic: "Listening Skills & Note-Making Mastery",
-      subtopics: ["Active, critical, and empathetic listening differences", "Overcoming psychological and environmental listening barriers", "Passage note-making with standard abbreviation key", "Drafting a concise, objective summary"],
-      learningObjective: "Perfect note-making formatting and active listening barrier mitigation answers."
+      subject: "Basics of Communication Skills", unit: 2, duration: "90 mins", studyType: "Practice",
+      mainTopic: "Phonetics, Pronunciation & Oral Delivery",
+      subtopics: ["International Phonetic Alphabet (IPA): 44 English speech sounds", "20 vowels (12 monophthongs + 8 diphthongs) and 24 consonants", "Syllable division and primary/secondary word stress rules", "Intonation contours: falling, rising, fall-rise in questions and statements", "Non-verbal communication: kinesics, oculesics, haptics, and proxemics"],
+      learningObjective: "Write phonetic transcriptions, mark syllable stress, and explain non-verbal communication."
     }
   },
   {
     date: "2027-01-01",
     slot1: {
-      subject: "Basics of Communication Skills", unit: 3, duration: "100 mins", studyType: "Learning",
-      mainTopic: "Literature Master Analysis: Drama & Partition",
-      subtopics: ["Anton Chekhov's 'The Proposal': farcical elements & satire", "Saadat Hasan Manto's 'Toba Tek Singh': sanity vs political madness", "Comparative character sketches (Lomov vs Bishan Singh)", "Writing structured critical commentary"],
-      learningObjective: "Master dramatic satire in Chekhov and tragic allegorical analysis in Manto."
+      subject: "Basics of Communication Skills", unit: 3, duration: "120 mins", studyType: "Learning",
+      mainTopic: "Literature Masterworks: Bacon & Daniel Keyes",
+      subtopics: ["Francis Bacon's 'Of Studies': aphoristic prose style, historical context, Latinisms", "Three chief functions of studies: delight, ornament, ability", "Curing mental diseases through specific studies (history, mathematics, philosophy)", "Daniel Keyes' 'Flowers for Algernon': thematic depth and narrative structure", "The Algernon-Gordon effect: psychological, ethical, and societal implications"],
+      learningObjective: "Produce sophisticated textual analysis and structured long-answer literary essays."
     },
     slot2: {
-      subject: "Basics of Communication Skills", unit: 2, duration: "90 mins", studyType: "Learning",
-      mainTopic: "Speaking Skills & Professional Etiquettes",
-      subtopics: ["Phonetics: vowels, diphthongs, and consonant articulation", "Public speaking confidence & delivery techniques", "Group discussion dynamics: roles and moderating etiquette", "7Cs of communication detailed case study"],
-      learningObjective: "Consolidate oral communicative rubrics, phonetic clarity, and GD leadership techniques."
+      subject: "Basics of Communication Skills", unit: 3, duration: "90 mins", studyType: "Learning",
+      mainTopic: "Literature Masterworks: Chekhov & Manto",
+      subtopics: ["Anton Chekhov's 'The Proposal': farce, satire, and character caricatures (Lomov, Natalya, Chubukov)", "Oxen Meadows dispute and petty bourgeois materialism", "Saadat Hasan Manto's 'Toba Tek Singh': partition trauma and asylum allegory", "Bishan Singh's symbolic identity and tragic death in no man's land", "Critical comparison of dramatic satire vs psychological tragedy"],
+      learningObjective: "Analyze Chekhov's comic satire and Manto's partition allegory for examination questions."
     }
   },
   {
     date: "2027-01-02",
     slot1: {
-      subject: "Basics of Communication Skills", unit: 4, duration: "100 mins", studyType: "Practice",
-      mainTopic: "Professional Writing Master Practice",
-      subtopics: ["Writing formal emails (subject line, salutation, body, sign-off)", "Official complaint, recommendation, and inquiry letters", "Technical project report with abstract, findings, and conclusion", "Paragraph writing on contemporary engineering topics"],
-      learningObjective: "Draft flawless professional correspondence and technical reports conforming to rubrics."
+      subject: "Basics of Communication Skills", unit: 4, duration: "120 mins", studyType: "Practice",
+      mainTopic: "Professional Writing: Formal Letters & Emails",
+      subtopics: ["Standard layout of formal letters: block vs semi-block format", "Business letters: inquiry letters, quotation requests, and order placement", "Sales letters and persuasive writing strategies (AIDA model)", "Complaint and adjustment letters: maintaining professional diplomacy", "Official email etiquette: subject line precision, salutations, attachments"],
+      learningObjective: "Draft flawlessly formatted formal letters, business inquiries, and official correspondence."
     },
     slot2: {
       subject: "Basics of Communication Skills", unit: 4, duration: "90 mins", studyType: "Practice",
-      mainTopic: "Précis Writing & Reading Comprehension",
-      subtopics: ["Rules of précis writing (one-third length, indirect speech)", "Reading comprehension: skimming and scanning strategies", "Vocabulary building and contextual word substitution", "Eliminating grammatical redundancy"],
-      learningObjective: "Master reading comprehension techniques and précis writing within word count boundaries."
+      mainTopic: "Technical Reports & Resume Engineering",
+      subtopics: ["Structure of technical reports: title, executive summary, methodology, findings, recommendations", "Progress reports, laboratory reports, and feasibility reports", "Modern Resume vs Curriculum Vitae (CV) distinction", "Reverse chronological resume layout: crafting impactful action-verb bullet points", "Writing tailored cover letters for engineering job applications"],
+      learningObjective: "Format structured technical progress reports and engineer FAANG-grade technical resumes."
     }
   },
   {
     date: "2027-01-03",
     slot1: {
-      subject: "Basics of Communication Skills", unit: 1, duration: "120 mins", studyType: "Test",
-      mainTopic: "BOC Full Syllabus 3-Hour Timed Mock Paper",
-      subtopics: ["Complete 3-hour exam simulation (Units 1, 2, 3, 4)", "Literature questions: Bacon, Keyes, Chekhov, Manto", "Professional correspondence: letters, emails, reports", "Targeting 55+/60 external marks"],
-      learningObjective: "Execute a full-length Communication Skills paper adhering to word counts and presentation rubrics."
+      subject: "Basics of Communication Skills", unit: 1, duration: "120 mins", studyType: "Revision",
+      mainTopic: "Grammar, Vocabulary & Reading Comprehension Drill",
+      subtopics: ["Subject-verb agreement (concord) edge case rules", "Active vs passive voice transformation for technical scientific writing", "Direct vs indirect reported speech rules and punctuation", "Commonly confused word pairs (homophones, homonyms) and idioms", "Unseen technical passage comprehension practice: title, summary, inference"],
+      learningObjective: "Ensure zero grammatical deductions and sharpen reading comprehension accuracy."
     },
     slot2: {
-      subject: "Basics of Communication Skills", unit: 1, duration: "75 mins", studyType: "Revision",
-      mainTopic: "Final BOC Review & Rest",
-      subtopics: ["Reviewing all 4 literature summaries and quote sheets", "Writing format quick checklist (headers, salutations)", "Early rest for clear, expressive writing tomorrow"],
-      learningObjective: "Consolidate literature themes and rest ahead of the examination."
+      subject: "Basics of Communication Skills", unit: 1, duration: "60 mins", studyType: "Revision",
+      mainTopic: "Master Formats Sheet & Literature Quotes Recap",
+      subtopics: ["Review 2-page cheat sheet of letter, email, report, and resume templates", "Review high-yield quotations from Bacon, Keyes, Chekhov, and Manto", "Verify stationery, pens, admit card for tomorrow morning", "Early restful sleep by 10 PM"],
+      learningObjective: "Consolidate writing templates and literature quotes ahead of the 4 January examination."
     }
   },
   {
@@ -912,76 +1080,79 @@ const daysData = [
     slot1: {
       subject: "Basics of Communication Skills", unit: 1, duration: "180 mins", studyType: "Official Exam",
       mainTopic: "OFFICIAL EXAM: Basics of Communication Skills",
-      subtopics: ["Paper 3 of Semester 1 Examinations", "Time: 09:30 AM – 12:30 PM (3 Hours)", "Full Syllabus (Listening, Speaking, Reading/Literature, Writing)", "Max External Marks: 60 (2 Credits)"],
-      learningObjective: "Conclude the Communication Skills examination with eloquence, neat handwriting, and structured formatting."
+      subtopics: ["THIRD OFFICIAL PAPER of End Semester Examinations", "Time: 09:30 AM – 12:30 PM (3 Hours)", "Full Syllabus (Theory, Phonetics, Literature, Formats)", "Max External Marks: 60 (2 Credits)"],
+      learningObjective: "Deliver eloquent essay responses, precise writing formats, and sound textual analyses."
     },
     slot2: {
-      subject: "Engineering Chemistry", unit: 1, duration: "60 mins", studyType: "Learning",
-      mainTopic: "Post-Exam Reset & Chemistry Kick-Off",
-      subtopics: ["Light break after Communication Skills exam", "Transition to next exam: Engineering Chemistry (9 Jan)", "4-day Chemistry intensive sprint overview (Units 1, 2, 3, 4)", "Reviewing water treatment formulas"],
-      learningObjective: "Reset mental state and commence the 4-day intensive Engineering Chemistry sprint."
+      subject: "Engineering Chemistry", unit: 1, duration: "60 mins", studyType: "Revision",
+      mainTopic: "Communication Decompression & Chemistry Sprint Kickoff",
+      subtopics: ["Pack away Communication Skills materials", "Review schedule for Engineering Chemistry (Exam on 9 January)", "4 full days available to master water, fuels, lubricants, phase rule, polymers", "Review high-weightage numerical formulas in the evening"],
+      learningObjective: "Shift focus decisively into Engineering Chemistry preparation."
     }
   },
+
+  // ==========================================
+  // PHASE 6: ENGINEERING CHEMISTRY SPRINT (5 Jan – 9 Jan 2027)
+  // 5 Days = 10 Slots (4 prep days + 9 Jan Exam)
+  // ==========================================
   {
     date: "2027-01-05",
     slot1: {
-      subject: "Engineering Chemistry", unit: 1, duration: "100 mins", studyType: "Practice",
-      mainTopic: "Water Treatment Complete Mastery",
-      subtopics: ["Hardness calculations and units of hardness", "EDTA complexometric titration equations and numericals", "Alkalinity determinations (P and M alkalinity)", "Lime-Soda process calculations and ion-exchange regeneration"],
-      learningObjective: "Solve all numerical variations of EDTA titration and Lime-Soda water softening processes."
+      subject: "Engineering Chemistry", unit: 1, duration: "120 mins", studyType: "Practice",
+      mainTopic: "Water Technology & Industrial Softening Numericals",
+      subtopics: ["Hardness calculations from EDTA titration data: standard numerical problems", "Alkalinity determinations: phenolphthalein and methyl orange relationship table", "Boiler troubles: caustic embrittlement and scale/sludge reactions", "Lime-Soda process: cold and hot process stoichiometric calculation numericals", "Zeolite process and Ion-exchange demineralization numericals"],
+      learningObjective: "Solve complex numerical problems on water hardness, alkalinity, and lime-soda softening."
     },
     slot2: {
-      subject: "Engineering Chemistry", unit: 2, duration: "100 mins", studyType: "Practice",
-      mainTopic: "Fuels, Combustion & Bomb Calorimetry",
-      subtopics: ["Gross vs Net calorific values and Dulong's formula", "Bomb calorimeter construction, cooling/acid corrections, calculation", "Proximate and ultimate analysis of coal numericals", "Corrosion mechanisms: wet/dry, galvanic, cathodic protection"],
-      learningObjective: "Master coal analysis numericals, bomb calorimetry formulas, and corrosion control methods."
+      subject: "Engineering Chemistry", unit: 2, duration: "90 mins", studyType: "Practice",
+      mainTopic: "Fuels & Combustion Calorific Calculations",
+      subtopics: ["Gross and Net calorific value calculations using Dulong's formula", "Bomb calorimeter: construction, working procedure, cooling corrections, water equivalent", "Boy's gas calorimeter for gaseous fuels", "Proximate and ultimate analysis calculations for commercial coal samples", "Theoretical air requirement and flue gas volumetric analysis (Orsat apparatus)"],
+      learningObjective: "Perform quantitative calculations for calorific value, coal analysis, and combustion air requirements."
     }
   },
   {
     date: "2027-01-06",
     slot1: {
-      subject: "Engineering Chemistry", unit: 3, duration: "100 mins", studyType: "Learning",
-      mainTopic: "Spectroscopic Techniques Deep Dive",
-      subtopics: ["Beer-Lambert law derivation and numerical problems", "UV-Visible spectroscopy: electronic transitions & shifts", "1H-NMR spectroscopy: chemical shift, TMS standard, spin-spin splitting", "Jablonski diagram: fluorescence vs phosphorescence"],
-      learningObjective: "Interpret electronic and nuclear magnetic resonance spectra and solve spectrophotometric problems."
+      subject: "Engineering Chemistry", unit: 3, duration: "120 mins", studyType: "Learning",
+      mainTopic: "Phase Rule & Metallurgical Alloys",
+      subtopics: ["Derivation of Gibbs Phase Rule F = C - P + 2", "Terms explanation: Phase, Component, Degrees of freedom with chemical examples", "One-Component Water (H2O) system: phase diagram, curves, areas, triple point, metastable curve", "Two-Component Lead-Silver (Pb-Ag) system: eutectic point, Pattinson's desilverization process", "Two-Component Zinc-Magnesium (Zn-Mg) congruent melting point system"],
+      learningObjective: "Derive the Gibbs phase rule and analyze one-component and two-component phase diagrams."
     },
     slot2: {
-      subject: "Engineering Chemistry", unit: 4, duration: "100 mins", studyType: "Learning",
-      mainTopic: "Material Chemistry & Green Chemistry",
-      subtopics: ["Polymers: Teflon, Polyethylene (LDPE/HDPE), UF & Bakelite resins", "Biodegradable polymers: PHBV structure and applications", "Conducting polymers: Polyaniline conduction mechanism", "12 Principles of Green Chemistry & Biodiesel transesterification"],
-      learningObjective: "Master industrial polymer synthesis reactions, green chemistry principles, and biodiesel preparation."
+      subject: "Engineering Chemistry", unit: 3, duration: "90 mins", studyType: "Learning",
+      mainTopic: "Lubricants, Tribology & Industrial Specifications",
+      subtopics: ["Mechanism of lubrication: Hydrodynamic (thick film), Boundary (thin film), Extreme pressure", "Classification of lubricants: liquid, semi-solid (greases), solid (graphite, MoS2)", "Viscosity and Viscosity Index (Dean & Davis method)", "Flash point and Fire point determination (Pensky-Martens closed cup apparatus)", "Cloud point, Pour point, Saponification number, and Acid value"],
+      learningObjective: "Explain lubrication mechanisms and evaluate critical lubricant testing parameters."
     }
   },
-
-  // WEEK 11: 7–13 Jan (Chemistry Exam 9 Jan + C Programming Final Sprint to 13 Jan)
   {
     date: "2027-01-07",
     slot1: {
-      subject: "Engineering Chemistry", unit: 1, duration: "120 mins", studyType: "Revision",
-      mainTopic: "Chemistry Comprehensive Derivations & Diagrams",
-      subtopics: ["Redrawing: Bomb calorimeter, Zeolite plant, Ion exchange demineralizer", "UV-Vis spectrophotometer schematic", "EDTA-metal titration curves and equations", "Cathodic protection diagrams (sacrificial anode vs impressed current)"],
-      learningObjective: "Consolidate all industrial plant schematics and chemical reaction mechanisms from memory."
+      subject: "Engineering Chemistry", unit: 4, duration: "120 mins", studyType: "Learning",
+      mainTopic: "Polymers & Advanced Engineering Materials",
+      subtopics: ["Functionality and degree of polymerization", "Mechanism of addition (free-radical, ionic) and condensation polymerization", "Thermoplastics vs Thermosetting plastics: structural and property distinctions", "Synthesis, properties & engineering uses: Bakelite, Nylon-6,6, PMMA, Polycarbonates", "Elastomers: natural rubber structure, sulfur vulcanization chemistry, Buna-S and Buna-N"],
+      learningObjective: "Explain polymerization mechanisms and compare mechanical properties of commercial plastics."
     },
     slot2: {
-      subject: "Engineering Chemistry", unit: 2, duration: "90 mins", studyType: "Practice",
-      mainTopic: "Chemistry Numerical Speed Drills",
-      subtopics: ["Timed solving: 4 Lime-Soda softening problems", "Timed solving: 3 Coal ultimate analysis problems", "Timed solving: 3 Beer-Lambert concentration problems"],
-      learningObjective: "Ensure maximum speed and numerical precision across all mathematical topics in Chemistry."
+      subject: "Engineering Chemistry", unit: 4, duration: "90 mins", studyType: "Learning",
+      mainTopic: "Corrosion Science & Protection Engineering",
+      subtopics: ["Chemical (dry) corrosion: Pilling-Bedworth rule for oxide film stability", "Electrochemical (wet) corrosion mechanism: hydrogen evolution vs oxygen absorption", "Galvanic corrosion, differential aeration corrosion (pitting, waterline)", "Factors influencing corrosion: nature of metal and environmental conditions", "Cathodic protection: sacrificial anode vs impressed current cathodic methods"],
+      learningObjective: "Analyze electrochemical corrosion mechanisms and design industrial cathodic protection systems."
     }
   },
   {
     date: "2027-01-08",
     slot1: {
-      subject: "Engineering Chemistry", unit: 1, duration: "120 mins", studyType: "Test",
-      mainTopic: "Chemistry Full Syllabus 3-Hour Mock Paper",
-      subtopics: ["Complete 3-hour exam simulation (Units 1, 2, 3, 4)", "Structured numericals, chemical equations, industrial diagrams", "Green chemistry principles and polymer applications", "Target 55+/60 external marks"],
-      learningObjective: "Execute a full-length Chemistry mock examination to verify pacing and step presentation."
+      subject: "Engineering Chemistry", unit: 1, duration: "120 mins", studyType: "Revision",
+      mainTopic: "Chemistry Master Formula & Diagram Sheet Assembly",
+      subtopics: ["Assemble 4-page master formula sheet: EDTA, Lime-Soda, Bomb, Proximate, Phase rule", "Redraw all plant diagrams: Demineralization plant, Bomb calorimeter, Otto Hoffmann's oven", "Redraw phase diagrams: Water system and Lead-Silver system with labeled axes", "Review all 25 high-frequency university exam derivations"],
+      learningObjective: "Consolidate all numerical formulas, chemical reactions, and industrial schematics."
     },
     slot2: {
-      subject: "Engineering Chemistry", unit: 1, duration: "75 mins", studyType: "Revision",
-      mainTopic: "Final Chemistry Formula Scan & Rest",
-      subtopics: ["Active recall of formulas (hardness, Dulong, bomb calorimeter, Beer-Lambert)", "Pack exam kit and scientific calculator", "Early rest for fresh mental energy tomorrow"],
-      learningObjective: "Finalize formula memory and ensure physical and mental refreshment for the exam."
+      subject: "Engineering Chemistry", unit: 1, duration: "60 mins", studyType: "Revision",
+      mainTopic: "Pre-Exam Numerical Run & Rest",
+      subtopics: ["Rework 3 standard numerical problems (one EDTA, one Lime-Soda, one Bomb calorimeter)", "Admit card, calculator, pens checked and ready", "Nutritious meal and early sleep by 10 PM"],
+      learningObjective: "Achieve calm, confident mental state ahead of the 9 January Chemistry examination."
     }
   },
   {
@@ -989,59 +1160,64 @@ const daysData = [
     slot1: {
       subject: "Engineering Chemistry", unit: 1, duration: "180 mins", studyType: "Official Exam",
       mainTopic: "OFFICIAL EXAM: Engineering Chemistry",
-      subtopics: ["Paper 4 of Semester 1 Examinations", "Time: 09:30 AM – 12:30 PM (3 Hours)", "Full Syllabus (Water, Fuels, Spectroscopy, Polymers)", "Max External Marks: 60 (4 Credits)"],
-      learningObjective: "Complete the Chemistry examination with clean chemical equations and accurate numerical results."
+      subtopics: ["FOURTH OFFICIAL PAPER of End Semester Examinations", "Time: 09:30 AM – 12:30 PM (3 Hours)", "Full Syllabus (Water, Fuels, Lubricants/Phase Rule, Polymers/Corrosion)", "Max External Marks: 60 (4 Credits)"],
+      learningObjective: "Execute the Chemistry exam targeting full numerical marks and neat plant diagrams."
     },
     slot2: {
-      subject: "Problem Solving Using C", unit: 1, duration: "60 mins", studyType: "Learning",
-      mainTopic: "Post-Exam Reset & Final C Sprint Kick-Off",
-      subtopics: ["Short rest after Chemistry examination", "Transition to FINAL examination: C Programming (13 Jan)", "3-day intensive coding sprint plan: Syntax, Pointers, Arrays, Files", "Reviewing C compilation model and tokens"],
-      learningObjective: "Reset mental state and initiate the final 3-day intensive C Programming sprint."
+      subject: "Problem Solving Using C", unit: 1, duration: "60 mins", studyType: "Revision",
+      mainTopic: "Chemistry Decompression & C Programming Sprint Kickoff",
+      subtopics: ["Pack away Chemistry materials", "Review schedule for Problem Solving Using C (Final Exam on 13 January)", "3 full days available for intensive coding and algorithm revision", "Review core C program syntax and pointer conventions in the evening"],
+      learningObjective: "Transition mental focus to the final sprint: Problem Solving Using C."
     }
   },
+
+  // ==========================================
+  // PHASE 7: PROBLEM SOLVING USING C INTENSIVE SPRINT (10 Jan – 13 Jan 2027)
+  // 4 Days = 8 Slots (3 prep days + 13 Jan Final Exam)
+  // ==========================================
   {
     date: "2027-01-10",
     slot1: {
-      subject: "Problem Solving Using C", unit: 2, duration: "100 mins", studyType: "Practice",
-      mainTopic: "C Units 1 & 2 Complete Code Clinic",
-      subtopics: ["Data types, type casting, and storage classes (auto, static, extern, register)", "Bitwise operators, shifts, and precedence output tracing", "Control structures: switch fall-through, while vs do-while", "Writing clean algorithms: Prime check, Armstrong, Fibonacci, Series"],
-      learningObjective: "Master foundational C syntax, control flow logic, and operator precedence tracing questions."
+      subject: "Problem Solving Using C", unit: 1, duration: "120 mins", studyType: "Learning",
+      mainTopic: "Computer Architecture, Algorithms & C Syntax",
+      subtopics: ["Block diagram of a computer: ALU, Control Unit, Memory, I/O devices", "Algorithms vs Flowcharts: design conventions, pseudo-code standards", "Compilation stages: Preprocessor, Compiler, Assembler, Linker, Loader", "Constants, variables, keywords, and data type ranges in 32/64-bit systems", "Operator precedence, associativity, bitwise operators, and expression evaluation"],
+      learningObjective: "Master foundational computing concepts, algorithmic flowcharts, and C operator precedence."
     },
     slot2: {
-      subject: "Problem Solving Using C", unit: 3, duration: "100 mins", studyType: "Practice",
-      mainTopic: "Arrays, Sorting & Functions Mastery",
-      subtopics: ["1D array sorting: Bubble sort, Selection sort implementations", "Binary search algorithm implementation with loop bounds", "2D array matrix operations: multiplication and transpose", "Passing 1D and 2D arrays to functions as pointers"],
-      learningObjective: "Write clean modular C code for searching, sorting, and multi-dimensional matrix mathematics."
+      subject: "Problem Solving Using C", unit: 2, duration: "90 mins", studyType: "Practice",
+      mainTopic: "Control Structures & Iteration Mechanics",
+      subtopics: ["Decision making: if, if-else, nested if, and switch-case with fall-through", "Looping constructs: while, do-while, for loops comparison", "Break, continue, goto statements and infinite loop pitfalls", "Implementation: Prime testing, Armstrong numbers, Palindrome numbers, Fibonacci series", "Pattern printing logic and nested loop mechanics"],
+      learningObjective: "Write bug-free conditional branching and nested iteration algorithms in clean C syntax."
     }
   },
   {
     date: "2027-01-11",
     slot1: {
-      subject: "Problem Solving Using C", unit: 4, duration: "100 mins", studyType: "Practice",
-      mainTopic: "Pointers, Dynamic Memory & Structures",
-      subtopics: ["Pointer arithmetic, dereferencing, and pointer to pointer", "Dynamic memory allocation: malloc, calloc, realloc, and free", "struct declaration, arrays of structures, and self-referential structures", "Unions vs structures memory alignment differences"],
-      learningObjective: "Implement complex pointer manipulation, dynamic heap memory, and structured data records."
+      subject: "Problem Solving Using C", unit: 3, duration: "120 mins", studyType: "Practice",
+      mainTopic: "Arrays & Modular Function Engineering",
+      subtopics: ["1D Arrays: declaration, memory layout, linear search and binary search", "Sorting: Bubble sort, Selection sort, Insertion sort implementations", "2D Arrays: row-major vs column-major order, matrix addition, multiplication, transpose", "Functions: declaration, definition, pass-by-value vs pass-by-reference", "Recursion mechanics: stack frames, base cases, Factorial, GCD, Tower of Hanoi"],
+      learningObjective: "Implement searching, sorting, matrix manipulations, and recursive algorithms in C."
     },
     slot2: {
-      subject: "Problem Solving Using C", unit: 4, duration: "100 mins", studyType: "Practice",
-      mainTopic: "File Handling & 10 Golden C Programs",
-      subtopics: ["fopen modes (r, w, a, r+, rb, wb) and fclose error checks", "Character, line, and formatted file I/O (fgetc, fgets, fscanf, fprintf)", "Binary file record manipulation using fread and fwrite", "Consolidating 10 golden university C programs on paper"],
-      learningObjective: "Write robust file handling programs and practice handwritten code for university examinations."
+      subject: "Problem Solving Using C", unit: 3, duration: "90 mins", studyType: "Practice",
+      mainTopic: "String Algorithms & Character Arrays",
+      subtopics: ["Null-terminated character arrays in memory", "Manual coding: strlen, strcpy, strcat, strcmp, strrev without string.h", "String pallindrome check, vowel counting, and word counting", "Array of strings (2D character array) and alphabetical sorting", "Command-line arguments: argc and argv processing"],
+      learningObjective: "Master string manipulation algorithms and command-line argument processing."
     }
   },
   {
     date: "2027-01-12",
     slot1: {
-      subject: "Problem Solving Using C", unit: 1, duration: "150 mins", studyType: "Test",
-      mainTopic: "C Programming Full Syllabus 3-Hour Mock Paper",
-      subtopics: ["Strict 3-hour exam simulation (Units 1, 2, 3, 4)", "Section A: Short syntax and output prediction questions", "Section B: Algorithm flowcharts and program writing", "Target 55+/60 external marks"],
-      learningObjective: "Evaluate handwritten programming speed, syntax precision, and dry-run accuracy on a full mock exam."
+      subject: "Problem Solving Using C", unit: 4, duration: "120 mins", studyType: "Practice",
+      mainTopic: "Pointers, Dynamic Memory & Structures",
+      subtopics: ["Pointer fundamentals: address-of (&) and dereference (*) operators", "Pointer arithmetic: increments, decrements, pointer subtraction", "Passing pointers to functions and dynamic memory allocation: malloc, calloc, realloc, free", "Structures: declaration, memory alignment, nested structures, array of structures", "Unions vs Structures: shared memory allocation and union access"],
+      learningObjective: "Master raw pointers, heap memory allocation, and structured record engineering in C."
     },
     slot2: {
-      subject: "Problem Solving Using C", unit: 1, duration: "75 mins", studyType: "Revision",
-      mainTopic: "Final C Code Polish & Calibrated Rest",
-      subtopics: ["Reviewing standard library functions (stdio.h, stdlib.h, string.h)", "Format specifiers and escape sequences checklist", "Pack exam stationery and admit card", "Early restful sleep ahead of the final examination"],
-      learningObjective: "Finalize mental program templates and rest well before tomorrow's final semester paper."
+      subject: "Problem Solving Using C", unit: 4, duration: "90 mins", studyType: "Practice",
+      mainTopic: "File Handling & Master Code Snippets Review",
+      subtopics: ["File handling: fopen, fclose, fprintf, fscanf, fgetc, fputc, fgets, fputs", "Binary files: fread and fwrite for structure records", "Error handling: feof, ferror, and rewind functions", "Review 15 essential university C programs on paper with neat comments", "Admit card, pens, and exam kit checklist for the grand finale"],
+      learningObjective: "Write persistent file processing routines and prepare for the final examination."
     }
   },
   {
@@ -1056,7 +1232,7 @@ const daysData = [
       subject: "Problem Solving Using C", unit: 1, duration: "60 mins", studyType: "Revision",
       mainTopic: "SEMESTER 1 MISSION ACCOMPLISHED!",
       subtopics: ["All 5 Theory Examinations Concluded (21 Credits Total)", "Engineering Mathematics-I (4cr) · Electronics (3cr) · Communication (2cr) · Chemistry (4cr) · C Programming (3cr)", "Practical laboratory assessments fulfilled", "Celebrate academic discipline and preparation excellence"],
-      learningObjective: "Celebrate the successful conclusion of the 69-day Semester 1 Academic Mission."
+      learningObjective: "Celebrate the successful conclusion of the 64-day Semester 1 Academic Mission."
     }
   }
 ];
@@ -1125,7 +1301,7 @@ const fullRoadmap = daysData.map((d) => {
   };
 });
 
-const content = `// Auto-generated 69 days daily roadmap (6 November 2026 – 13 January 2027)
+const content = `// Auto-generated 64 days daily roadmap (11 November 2026 – 13 January 2027)
 // Exactly 2 study slots per day, verified syllabus coverage, updated exam dates.
 
 export const DAILY_ROADMAP_DAYS = ${JSON.stringify(fullRoadmap, null, 2)};

@@ -32,7 +32,7 @@ export const UpcomingTimeline = ({
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
         <div>
           <h3 className="text-lg font-bold text-white tracking-tight flex items-center gap-2">
-            <span>69-Day Study Roadmap (138 Slots)</span>
+            <span>64-Day Study Roadmap (128 Slots)</span>
             <span className="text-xs font-mono px-2 py-0.5 rounded-full bg-neutral-900 text-neutral-300 border border-neutral-800">
               {filtered.length} days
             </span>

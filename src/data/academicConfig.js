@@ -1,4 +1,4 @@
-// Daily Academic Roadmap Data (6 November 2026 – 13 January 2027)
+// Daily Academic Roadmap Data (11 November 2026 – 13 January 2027)
 // Exactly 2 intelligent study slots per day, complete syllabus coverage, updated exam dates.
 
 export const ACADEMIC_CONFIG = {
@@ -6,7 +6,7 @@ export const ACADEMIC_CONFIG = {
   subtitle: "My Semester 1 Study Roadmap",
   student: "B.Tech CSE-AIML · First Year",
   institution: "PIET (Panipat Institute of Engineering & Technology)",
-  startDate: "2026-11-06",
+  startDate: "2026-11-11",
   endDate: "2027-01-13",
   examSchedule: [
     { date: "2026-12-17", subject: "Engineering Mathematics-I", credits: 4, code: "BS-MTH101" },

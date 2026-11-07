@@ -71,7 +71,7 @@ export const DateNavigator = ({
               )}
             </div>
             <div className="text-xs text-neutral-400 flex items-center gap-2 mt-0.5">
-              <span>Day {currentIndex + 1} of 69</span>
+              <span>Day {currentIndex + 1} of {allDates.length}</span>
               <span>•</span>
               <span className="text-neutral-300 font-mono">2 Slots Scheduled</span>
             </div>
@@ -88,7 +88,7 @@ export const DateNavigator = ({
                 : 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:text-white hover:border-neutral-600'
             }`}
           >
-            Start (6 Nov)
+            Start (11 Nov)
           </button>
 
           <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-neutral-900 border border-neutral-800 text-xs">

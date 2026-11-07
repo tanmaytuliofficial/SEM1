@@ -1,9 +1,9 @@
 import { DAILY_ROADMAP_DAYS } from '../data/dailyRoadmapData';
 
-const STORAGE_DAYS_KEY = 'semester_os_daily_days_v3';
-const STORAGE_ACTIVE_DATE_KEY = 'semester_os_active_date_v3';
-const STORAGE_APP_VERSION_KEY = 'semester_os_version_v3';
-const CURRENT_VERSION = '3.0.0';
+const STORAGE_DAYS_KEY = 'semester_os_daily_days_v4';
+const STORAGE_ACTIVE_DATE_KEY = 'semester_os_active_date_v4';
+const STORAGE_APP_VERSION_KEY = 'semester_os_version_v4';
+const CURRENT_VERSION = '4.0.0';
 
 /**
  * Smart merge function:
@@ -118,9 +118,9 @@ export const resetDaysToDefault = () => {
  */
 export const loadStoredActiveDate = () => {
   try {
-    return localStorage.getItem(STORAGE_ACTIVE_DATE_KEY) || '2026-11-06';
+    return localStorage.getItem(STORAGE_ACTIVE_DATE_KEY) || '2026-11-11';
   } catch (e) {
-    return '2026-11-06';
+    return '2026-11-11';
   }
 };
 
@@ -144,7 +144,7 @@ export const exportBackupJSON = (days, activeDate) => {
       app: "Semester OS",
       version: CURRENT_VERSION,
       exportedAt: new Date().toISOString(),
-      activeDate: activeDate || '2026-11-06',
+      activeDate: activeDate || '2026-11-11',
       totalDays: days.length,
       days: days
     };
